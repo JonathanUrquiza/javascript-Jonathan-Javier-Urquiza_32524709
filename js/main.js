@@ -1,34 +1,23 @@
-/* variables, son espacioes en memorias que utilizamos para almacenar información*/
-// No se puede repetir las declaraciones de las variables
-var nombre = "jose";//ES5 no ultilizada a partir de ES6
-//encuentro un var y lo cambio por un let
-
-//ES6 let
-
-let nombres = "Jonathan Javier";
-let apellido = "Urquiza";
-let DNI = prompt("ingresa tu dni");
-console.log(DNI);
+//Pre-entrega 1
 
 
-/* asigna u nvalor a un operador =
+//ingreso de información
 
-Respeta la cascadad.*/
+nombre =prompt("ingrese su nombre");
+edad = parseInt(prompt("ingrese su edad"));
+edadMin = 18;
 
-let dni = 32524709; //variable de tipo number
-let dni2  = "tres, dos, cinco, dos cuatro, siete, cero, nueve";//variable del tipo string
+//proceso
+difEdad = 18 - edad;
 
-
-//constatnes, no se pueden reasignarun valor a las constantes, son fijas, se declaran y se inician al mismo tiempo.
-const pi = 3.141516;
-/*metodos de salida.
-console.log(nombres);
-console.log('hola mundo');*/
-
-
-//metodos de entrada
-//prompt();
-
-let numero = prompt("ingresa un numero");
-console.log(numero);
-
+//condicion
+if (edad >= 0) {
+    if (edad >= 18) {
+        alert("Bienvenido " + nombre + " eres mayor, puedes pasar al casino.");
+    } else {
+        alert(`hola ${nombre} no, no pasás, sos menor de edad, Te faltan ${difEdad} para entrar.`);
+    }
+} else {
+    alert(edad + " no es una edad válida.");
+}
+//fin del codigo
