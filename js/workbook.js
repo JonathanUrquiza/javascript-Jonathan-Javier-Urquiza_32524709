@@ -1,7 +1,7 @@
 //workbook: ejercicio 1 if {} else {}
 
 //Ingreso de información
-
+/*
 let operación = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
 let numUno;
 let numDos;
@@ -27,3 +27,19 @@ if (operación <= 4) {
 } else {
     alert("La opción seleccionada no existe");
 }
+
+
+// ejercicio 2 ciclo for{} (fibonacci)
+
+let a = 0; 
+let b = 1; 
+let c = 0;
+
+for(let i = 0; i <= 15; i++){
+    console.log(a + ", ");
+
+c = a + b;
+a = b;
+b = c;
+}
+*/
