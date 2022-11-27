@@ -31,6 +31,11 @@ if (operación <= 4) {
 
 // ejercicio 2 ciclo for{} (fibonacci)
 
+for(desde; hasta; actualización) {
+ … //lo que se escriba acá se ejecutará mientras dure el ciclo
+}
+
+
 let a = 0; 
 let b = 1; 
 let c = 0;
@@ -42,4 +47,84 @@ c = a + b;
 a = b;
 b = c;
 }
+
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+    alert(i);
+}
+
+
+tablas de multiplicar
+
+// Solicitamos un valor al usuario
+let ingresarNumero = parseInt(prompt("Ingresar Numero"));
+// En cada repetición, calculamos el número ingresado x el número de repetición (i)
+for (let i = 1; i <= 10; i++) {
+    let resultado = ingresarNumero * i ;
+    console.log(ingresarNumero +" X "+ i +" = "+ resultado);
+}
+
+turnos
+
+for (let i = 1; i <= 20; i++) {
+    // En cada repetición solicitamos un nombre.
+    let ingresarNombre = prompt("Ingresar nombre");
+    // Informamos el turno asignado usando el número de repetición (i).
+    alert(" Turno  N° "+i+" Nombre: "+ingresarNombre);
+}
+
 */
+/*
+let usuario = "Dani";
+if (usuario == "Dani") {
+    let pass = prompt('Ingresa tu pass');
+    if (pass == "123") {
+        console.log("bienvenido " + usuario);
+    } else {
+        console.log("hubo un error");
+    }
+}
+
+
+// variables bumeanas
+
+let Numero = 33;
+
+let esmayor = Numero <= 33;
+
+console.log(Numero);
+console.log(esmayor);
+
+if (esmayor) {
+    console.log("El numero es mayor o igual");
+} else {
+    console.log("El numero NO es mayor");
+}
+
+// operador logico
+
+let edad = 18;
+if (edad < 18) {
+    console.log("no podes entrar al casino");
+} else {
+    console.log("bienvenido al casino");
+}
+*/ 
+/* operador && devuelve true cunado dos condiciones son true
+si:
+edad < 18  && nombre == "dani" las dos condiciones tiene que ser verdaderas para
+
+
+//log de ingreso
+let nombreGuardado = "Pepe";
+let passGuardado = "123";
+let ingresoNombre = prompt(" ingrese su usuario");
+let ingrsePass = prompt("ingrese su pass")
+if (nombreGuardado == ingresoNombre && passGuardado === ingrsePass) {
+    console.log("bienvenido " + ingresoNombre);
+} else {
+    console.log("Hubo un error");
+}
+*/
+
