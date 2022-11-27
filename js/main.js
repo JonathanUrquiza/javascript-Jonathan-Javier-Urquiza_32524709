@@ -62,6 +62,7 @@ alert();
 */
 
 let operacion = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
+
 if (operacion == 1) {
     function sumar(numUno, numDos) {
         let resultado = numUno + numDos;
@@ -72,7 +73,11 @@ if (operacion == 1) {
         parseInt(prompt("ingrese el segundo valor a sumar"))
       );
     alert(`El resultad de la suma es: ${suma}`);
-} else if (operacion == 2) {
+}
+ 
+else 
+
+if (operacion == 2) {
     function restar(numUno, numDos) {
         let resultado = numUno - numDos;
         return resultado;
@@ -82,7 +87,11 @@ if (operacion == 1) {
         parseInt(prompt("ingrese el segundo valor a restar"))
       );
     alert(`El resultado de la resta es: ${resta}`);
-} else if (operacion == 3) {
+}
+
+else 
+
+if (operacion == 3) {
     function multiplicacion(numUno, numDos) {
         let resultado = numUno * numDos;
         return resultado;
@@ -92,7 +101,11 @@ if (operacion == 1) {
         parseInt(prompt("ingrese el segundo valor a multiplicar"))
       );
     alert(`El resultado de la multiplicación es: ${multi}`);
-} else if (operacion == 4) {
+}
+
+else 
+
+if (operacion == 4) {
     function dividir(numUno, numDos) {
         let resultado = numUno / numDos;
         return resultado;
@@ -103,11 +116,12 @@ if (operacion == 1) {
       );
     alert(`El resultado de la división es: ${divi}`);
 }
-alert(`gracias por utilizar la calculadora.`);
 
+else 
 
-
-
+{
+alert("la opción seleccionada no existe");
+}
 
 
 
