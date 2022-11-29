@@ -69,12 +69,12 @@ if (operacion == 1) {
         return resultado;
       }
       let suma = sumar(
-        parseInt(prompt("ingrese el primer valor a sumar")),
-        parseInt(prompt("ingrese el segundo valor a sumar"))
+        parseFloat(prompt("ingrese el primer valor a sumar")),
+        parseFloat(prompt("ingrese el segundo valor a sumar"))
       );
     alert(`El resultad de la suma es: ${suma}`);
 }
- 
+
 else 
 
 if (operacion == 2) {
@@ -83,8 +83,8 @@ if (operacion == 2) {
         return resultado;
       }
       let resta = restar(
-        parseInt(prompt("ingrese el primer valor a restar")),
-        parseInt(prompt("ingrese el segundo valor a restar"))
+        parseFloat(prompt("ingrese el primer valor a restar")),
+        parseFloat(prompt("ingrese el segundo valor a restar"))
       );
     alert(`El resultado de la resta es: ${resta}`);
 }
@@ -97,8 +97,8 @@ if (operacion == 3) {
         return resultado;
       }
       let multi = multiplicacion(
-        parseInt(prompt("ingrese el primer valor a multiplicar")),
-        parseInt(prompt("ingrese el segundo valor a multiplicar"))
+        parseFloat(prompt("ingrese el primer valor a multiplicar")),
+        parseFloat(prompt("ingrese el segundo valor a multiplicar"))
       );
     alert(`El resultado de la multiplicación es: ${multi}`);
 }
@@ -111,8 +111,8 @@ if (operacion == 4) {
         return resultado;
       }
       let divi = dividir(
-        parseInt(prompt("ingrese el primer valor a dividir")),
-        parseInt(prompt("ingrese el segundo valor a dividir"))
+        parseFloat(prompt("ingrese el primer valor a dividir")),
+        parseFloat(prompt("ingrese el segundo valor a dividir"))
       );
     alert(`El resultado de la división es: ${divi}`);
 }
@@ -123,5 +123,8 @@ else
 alert("la opción seleccionada no existe");
 }
 
-
+/*for (let i = 0; i <= 5; i++) {
+    const element = array[i];
+    
+}*/
 
