@@ -26,13 +26,16 @@ function conParametros(param1, param2) {
     console.log(param1 + param2);
     
 }
-//conParametros(1, 2);
+conParametros(1, 2);
+
+////////////////////////////////////////////
 let result = 0;
 
 function suma(num1, num2) {
     result = num1 + num2;
     
 }
+///////
 function mostrar(mensaje) {
     console.log(mensaje);
     
