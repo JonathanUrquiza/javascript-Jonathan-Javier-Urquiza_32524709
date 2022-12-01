@@ -1,0 +1,12 @@
+footer {
+
+    border: $border-gral;
+  
+    width: 100%;
+    align-items: center;
+}
+footer{
+    @include monitor {
+        border: $border-gral;
+    }
+}

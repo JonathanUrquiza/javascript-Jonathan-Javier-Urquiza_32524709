@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul { list-style: none;}
+a { text-decoration: none;}
+i { color: white;}
+
+main {
+    background-image: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5),
+    )
+    ,url(../img/logo/fondodetarjeta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.motor {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5),
+    )
+    ,url(../../img/carrusel/motor.jpg);
+
+}
+.cubierta {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5),
+    )
+    ,url(../../img/carrusel/neumaticos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center ;
+}
+.diagnostico {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5),
+    )
+    ,url(../../img/carrusel/diagnostico.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.vtv {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5),
+    )
+    ,url(../../img/carrusel/VTV.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}

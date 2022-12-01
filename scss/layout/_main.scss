@@ -1,0 +1,32 @@
+
+.cuerpo {
+
+    &__presentación {
+        margin: 2px;
+        padding: 2px;
+        gap: 2px;
+    }
+    &__banner {
+        border: 5px solid rgb(252, 4, 4);
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+
+
+.publicidad {
+    border: $border-gral;
+    background-color: $color-fondotxt;
+
+    &__contenido {
+        padding: 1px;
+    }
+}
+
+.mensaje {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(206, 191, 186);
+}

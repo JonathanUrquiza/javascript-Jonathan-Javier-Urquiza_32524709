@@ -1,22 +1,4 @@
-function sumar(numUno, numDos) {
-    return numUno + numDos;
-}
 
-function restar(numUno, numDos) {
-    return numUno - numDos;
-}
-
-function multiplicacion(numUno, numDos) {
-    return numUno * numDos;
-}
-
-function dividir(numUno, numDos) {
-    if(num2 === 0) {
-        alert("Error: no es posible dividir por 0");
-        return;
-    }
-    return numUno / numDos;
-}
 
 let operacion = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
 
@@ -42,3 +24,22 @@ else {
     alert("la opción seleccionada no existe");
 }
 
+function sumar(numUno, numDos) {
+    return numUno + numDos;
+}
+
+function restar(numUno, numDos) {
+    return numUno - numDos;
+}
+
+function multiplicacion(numUno, numDos) {
+    return numUno * numDos;
+}
+
+function dividir(numUno, numDos) {
+    if(num2 === 0) {
+        alert("Error: no es posible dividir por 0");
+        return;
+    }
+    return numUno / numDos;
+}
