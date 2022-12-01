@@ -1,44 +1,44 @@
-let operacion = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
-if (operacion == 1) {
-    function sumar(numUno, numDos) {
-        let resultado = numUno + numDos;
-        return resultado;
-      }
-      let suma = sumar(
-        parseFloat(prompt("ingrese el primer valor a sumar")),
-        parseFloat(prompt("ingrese el segundo valor a sumar"))
-      );
-    alert(`El resultad de la suma es: ${suma}`);
-} else if (operacion == 2) {
-    function restar(numUno, numDos) {
-        let resultado = numUno - numDos;
-        return resultado;
-      }
-      let resta = restar(
-        parseFloat(prompt("ingrese el primer valor a restar")),
-        parseFloat(prompt("ingrese el segundo valor a restar"))
-      );
-    alert(`El resultado de la resta es: ${resta}`);
-} else if (operacion == 3) {
-    function multiplicacion(numUno, numDos) {
-        let resultado = numUno * numDos;
-        return resultado;
-      }
-      let multi = multiplicacion(
-        parseFloat(prompt("ingrese el primer valor a multiplicar")),
-        parseFloat(prompt("ingrese el segundo valor a multiplicar"))
-      );
-    alert(`El resultado de la multiplicación es: ${multi}`);
-} else if (operacion == 4) {
-    function dividir(numUno, numDos) {
-        let resultado = numUno / numDos;
-        return resultado;
-      }
-      let divi = dividir(
-        parseFloat(prompt("ingrese el primer valor a dividir")),
-        parseFloat(prompt("ingrese el segundo valor a dividir"))
-      );
-    alert(`El resultado de la división es: ${divi}`);
-} else {
-alert("la opción seleccionada no existe");
+function sumar(numUno, numDos) {
+    return numUno + numDos;
 }
+
+function restar(numUno, numDos) {
+    return numUno - numDos;
+}
+
+function multiplicacion(numUno, numDos) {
+    return numUno * numDos;
+}
+
+function dividir(numUno, numDos) {
+    if(num2 === 0) {
+        alert("Error: no es posible dividir por 0");
+        return;
+    }
+    return numUno / numDos;
+}
+
+let operacion = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
+
+let resultado = 0;
+
+let num1 = parseFloat(prompt("ingrese el primer valor"));
+let num2 = parseFloat(prompt("ingrese el segundo valor a sumar"))
+
+if (operacion == 1) {
+    resultado = sumar(num1, num2);
+    alert(`El resultad de la suma es: ${resultado}`);
+} else if (operacion == 2) {
+    resultado = restar(num1, num2);
+    alert(`El resultado de la resta es: ${resultado}`);
+} else if (operacion == 3) {
+    resultado = multiplicacion(num1, num2);
+    alert(`El resultado de la multiplicación es: ${resultado}`);
+} else if (operacion == 4) {
+    resultado = dividir(num1, num2);
+    alert(`El resultado de la división es: ${resultado}`);
+}
+else {
+    alert("la opción seleccionada no existe");
+}
+
