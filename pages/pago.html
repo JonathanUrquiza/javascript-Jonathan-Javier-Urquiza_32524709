@@ -102,7 +102,7 @@
                     <form class="card p-2">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Codigo promocional">
-                            <button type="submit" class="btn btn-secondary">Leer</button>
+                            <button id="DscCode" type="submit" class="btn btn-secondary">Leer</button>
                         </div>
                     </form>
                 </div>
@@ -110,7 +110,7 @@
                     <h4 class="mb-3">Dirección de factura</h4>
                     <form class="needs-validation" novalidate="">
                         <div class="row g-3">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 nombre">
                                 <label for="firstName" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="firstName" placeholder="Marco" value=""
                                     required="">
@@ -118,7 +118,7 @@
                                     Se necesita validar el nombre.
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 apellido">
                                 <label for="lastName" class="form-label">Apellido</label>
                                 <input type="text" class="form-control" id="lastName" placeholder="serlik" value=""
                                     required="">
@@ -126,7 +126,7 @@
                                     Se necesita validar el apellido.
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 usuario">
                                 <label for="username" class="form-label">Usuario</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
@@ -283,7 +283,7 @@
         </div>
     </footer>
     <script src="form-validation.js"></script>
-    <script src="../js/01-intro.js"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
