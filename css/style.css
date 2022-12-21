@@ -214,5 +214,8 @@ footer {
     border: 3px solid rgb(0, 0, 0);
   }
 }
-
+.red {
+  color: red;
+  font-size: 3rem;
+}
 /*# sourceMappingURL=style.css.map */
