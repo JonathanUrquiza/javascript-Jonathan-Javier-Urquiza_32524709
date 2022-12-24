@@ -145,3 +145,10 @@ select.addEventListener('change',()=>{
 //funcion para crear HTML
 
 
+
+
+
+const formulario = querySelector('form')
+function validar(params) {
+    //logica de validacion
+}

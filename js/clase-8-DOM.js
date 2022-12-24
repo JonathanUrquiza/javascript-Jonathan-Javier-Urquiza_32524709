@@ -324,13 +324,25 @@ for (const persona of personas) {
 
 
 
-//////////////////////////////////////////////////
 
-/*Plantillas literales son los backtics `` */
 
 const contenedor = document.querySelector("div")
 for (const objeto of tablaPeriodica) {
     contenedor.innerHTML = `id: ${objecto.nombre} - 
     objeto ${objeto.simbolo}
     ${objecto.numeroA}`;
+}
+//////////////////////////////////////////////////
+/*Plantillas literales son los backtics `` */
+let producto = {id: 1, nombre : "arroz", precio: 123};
+let concatenado = "ID : " + producto.id+" - producto: " +
+producto.nombre + " $ "+ producto.precio;
+let plantilla = `ID: ${producto.id} - producto ${producto.nombre} $${producto.precio}`;
+console.log(concatenado);
+console.log(plantilla);
+
+const container = document.querySelector(".div")
+for (const obj of tablaPeriodica) {
+    container.innerHTML += `nombre:${obj.nombre} simbolo:${obj.simbolo} N° Arómico:${obj.numeroA} N° Masico:${obj.numeroM} grupo:${obj.grupo}`
+
 }

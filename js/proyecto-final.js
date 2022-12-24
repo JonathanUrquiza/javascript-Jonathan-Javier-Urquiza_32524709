@@ -1,4 +1,6 @@
 //array de objetos
+
+
 const tablaPeriodica = [
     //Elemento base
     {
@@ -182,16 +184,65 @@ const tablaPeriodica = [
         grupo: "gas noble",
     },
 ]
+/* const div =document.getElementById('app')
+
+let parrafo1 = document.createElement('div')
+console.log(parrafo1);
+parrafo1.innerHTML="<h1>simbolo</h1><h2>nombre</h2><p>numeroA</p>"
+
+ 
+//document.body.append(parrafo1)//final de html
+
+div.appendChild(parrafo1)//agrega al elemento padre
+
+
+ */
+let buscar = document.querySelector('input#buscar')
+
+
+
+function findQuimi(tablaPeriodica, filtro) {
+    const encontrado = tablaPeriodica.find((el) => {
+        return el.elemento
+    })
+    return encontrado;
+}
+
+const elEncontrados = findQuimi(tablaPeriodica, buscar)
+console.log(elEncontrados);
+
+
+
+
+
+let producto = { id: 1, nombre: "arroz", precio: 123 };
+let concatenado = "ID : " + producto.id + " - producto: " +
+    producto.nombre + " $" + producto.precio;
+let plantilla = `ID: ${producto.id} - producto ${producto.nombre} $${producto.precio}`;
+console.log(concatenado);
+console.log(plantilla);
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////////////////////
 //busqueda/filtrado por nombre
-function findQuimi(tablaPeriodica, filtro) {
+/* function findQuimi(tablaPeriodica, filtro) {
     const encontrado = tablaPeriodica.find((el)=>{
         return el.nombre.includes(filtro)
     })
     return encontrado;
 }
-////////////////////////////////////////////////////
+///// *////////////////////////////////////////////////
 /* para hacer operaciones
 const seleccionado = []
 
@@ -230,7 +281,7 @@ console.log(NaEncontrado);
 //Funcion constructora
 //agregar elemento quimico
 
-function TablaPeriodica(nombre, simbolo, numeroA, numeroM, electroNegatividad, estadoDeOxidacion, grupo) {
+/* function TablaPeriodica(nombre, simbolo, numeroA, numeroM, electroNegatividad, estadoDeOxidacion, grupo) {
     this.nombre = nombre;
     this.simbolo = simbolo;
     this.numeroA = tablaPeriodica.length + 1;
@@ -257,8 +308,13 @@ if (opcion == 1) {
 
 } else if (opcion == 3) {
 
-    for (let i = 0; i < tablaPeriodica.length; i++) {
-        console.table(tablaPeriodica[i])
-        
+    const container = document.querySelector(".div")
+    for (const obj of tablaPeriodica) {
+    container.innerHTML += `nombre:${obj.nombre} simbolo:${obj.simbolo} N° Arómico:${obj.numeroA} N° Masico:${obj.numeroM} grupo:${obj.grupo}`
+
     }
-} 
+}  */
+
+//mostrar
+
+

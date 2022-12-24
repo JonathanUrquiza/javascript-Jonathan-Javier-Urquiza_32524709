@@ -1,7 +1,7 @@
 let tablaPeriodica = [
     //Elemento base
     {
-        nombre: "Hidrógeno",
+        elemento: "Hidrógeno",
         simbolo: "H",
         numeroA: 1,
         numeroM: 1.008,
@@ -11,7 +11,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Helio",
+        elemento: "Helio",
         simbolo: "He",
         numeroA: 2,
         numeroM: 4.003,
@@ -21,7 +21,7 @@ let tablaPeriodica = [
         grupo: "gas noble"
     },
     {
-        nombre: "Litio",
+        elemento: "Litio",
         simbolo: "Li",
         numeroA: 3,
         numeroM: 6.968,
@@ -31,7 +31,7 @@ let tablaPeriodica = [
         grupo: "metal alcalino",
     },
     {
-        nombre: "Berilio",
+        elemento: "Berilio",
         simbolo: "Be",
         numeroA: 4,
         numeroM: 9.012,
@@ -41,7 +41,7 @@ let tablaPeriodica = [
         grupo: "alcalinoterreo",
     },
     {
-        nombre: "Boro",
+        elemento: "Boro",
         simbolo: "B",
         numeroA: 5,
         numeroM: 10.81,
@@ -51,7 +51,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Carbono",
+        elemento: "Carbono",
         simbolo: "C",
         numeroA: 6,
         numeroM: 12.01,
@@ -61,7 +61,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Nitrógeno",
+        elemento: "Nitrógeno",
         simbolo: "N",
         numeroA: 7,
         numeroM: 14.01,
@@ -71,7 +71,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Oxígeno",
+        elemento: "Oxígeno",
         simbolo: "O",
         numeroA: 8,
         numeroM: 16.00,
@@ -81,7 +81,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Flúor",
+        elemento: "Flúor",
         simbolo: "F",
         numeroA: 9,
         numeroM: 19.00,
@@ -91,7 +91,7 @@ let tablaPeriodica = [
         grupo: "alógenos",
     },
     {
-        nombre: "Neón",
+        elemento: "Neón",
         simbolo: "Ne",
         numeroA: 10,
         numeroM: 20.18,
@@ -101,7 +101,7 @@ let tablaPeriodica = [
         grupo: "gas noble",
     },
     {
-        nombre: "Sodio",
+        elemento: "Sodio",
         simbolo: "Na",
         numeroA: 11,
         numeroM: 22.99,
@@ -111,7 +111,7 @@ let tablaPeriodica = [
         grupo: "metal alcalino",
     },
     {
-        nombre: "Magnesio",
+        elemento: "Magnesio",
         simbolo: "Mg",
         numeroA: 12,
         numeroM: 24.31,
@@ -121,7 +121,7 @@ let tablaPeriodica = [
         grupo: "metal alcalinoterreo",
     },
     {
-        nombre: "Aluminio",
+        elemento: "Aluminio",
         simbolo: "Al",
         numeroA: 13,
         numeroM: 26.98,
@@ -131,7 +131,7 @@ let tablaPeriodica = [
         grupo: "gas noble",
     },
     {
-        nombre: "Silicio",
+        elemento: "Silicio",
         simbolo: "Si",
         numeroA: 14,
         numeroM: 28.09,
@@ -141,7 +141,7 @@ let tablaPeriodica = [
         grupo: "Metaloide",
     },
     {
-        nombre: "Fósforo",
+        elemento: "Fósforo",
         simbolo: "P",
         numeroA: 15,
         numeroM: 30.97,
@@ -151,7 +151,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Azufre",
+        elemento: "Azufre",
         simbolo: "S",
         numeroA: 16,
         numeroM: 32.07,
@@ -161,7 +161,7 @@ let tablaPeriodica = [
         grupo: "calcógeno",
     },
     {
-        nombre: "Cloro",
+        elemento: "Cloro",
         simbolo: "Cl",
         numeroA: 17,
         numeroM: 35.45,
@@ -171,7 +171,7 @@ let tablaPeriodica = [
         grupo: "halógeno",
     },
     {
-        nombre: "Argón",
+        elemento: "Argón",
         simbolo: "Ar",
         numeroA: 18,
         numeroM: 39.95,
@@ -186,7 +186,7 @@ let tablaPeriodica = [
 //busqueda/filtrado por nombre
 function findQuimi(tablaPeriodica, filtro) {
     const encontrado = tablaPeriodica.find((el) => {
-        return el.nombre.includes(filtro)
+        return el.elemento.includes(filtro)
     })
     return encontrado;
 }
@@ -196,8 +196,8 @@ function findQuimi(tablaPeriodica, filtro) {
 //agregar elemento quimico
 
 class Quimico {
-    constructor(nombre, simbolo, numeroM, electroNegatividad, estadoDeOxidacion, grupo) {
-        this.nombre = nombre;
+    constructor(elemento, simbolo, numeroM, electroNegatividad, estadoDeOxidacion, grupo) {
+        this.elemento = elemento;
         this.simbolo = simbolo;
         this.numeroA = tablaPeriodica.length + 1;
         this.numeroM = parseFloat(numeroM);
@@ -255,29 +255,37 @@ do {
 let opcion = prompt("ingrese \n1 Buscar elemento en la tabla. \n2 Agregar elemento y ver la tabla. \n3 ver tabla completa.");
 
 if (opcion == 1) {
-
+    
     let buscar = prompt("ingrese el elemento quimico que deseas encontrar")
+    const contenedor = document.querySelector(".busca")
     const elEncontrados = findQuimi(tablaPeriodica, buscar)
-    console.table(elEncontrados);
+    contenedor.innerHTML+=  `nombre:${elEncontrados.elemento} simbolo:${elEncontrados.simbolo} N° Arómico:${elEncontrados.numeroA} N° Masico:${elEncontrados.numeroM} grupo:${elEncontrados.grupo}`
 
 } else if (opcion == 2) {
 
     /*tablaPeriodica.pop() para borrar el ultimo*/
 
-    let nombre = prompt("ingresa el nombre del nuevo elemento")
+    let elemento = prompt("ingresa el nombre del nuevo elemento")
     let simbolo = prompt("ingresa el simbolo que lo identifica")
     let numeroA = parseInt(prompt("indica cual es su numero atómico"))
     let numeroM = parseInt(prompt("indica cual es su numero de masa"))
     let grupo = prompt("indica a que grupo de la tabla periódica pertenece")
-    tablaPeriodica.push(new Quimico(nombre, simbolo, numeroA, numeroM, grupo))
+    tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo))
     console.table(tablaPeriodica);
+    const agree = document.querySelector(".mostrar")
+    for (const muestra of tablaPeriodica) {
+        agree.innerHTML += `nombre: ${muestra.elemento} simbolo: ${muestra.simbolo} N° Atómico: ${muestra.numeroA} N° Másico: ${muestra.numeroM}`        
+    }
+    
  
 } else if (opcion == 3) {
 
-    for (let i = 0; i < tablaPeriodica.length; i++) {
-        console.log(tablaPeriodica[i]);
-
+    const container = document.querySelector(".div")
+    for (const obj of tablaPeriodica) {
+        container.innerHTML += `nombre: ${obj.elemento}  `
+    
     }
+    
 } else if (opcion == 4) {
 
 }

@@ -134,7 +134,7 @@ console.log();
 const Libro= new Producto("harry potter y el pricionero de azcaban",
 "2340","img.jpg","20")
 
-//dopr global
+//scope global
 const Libros=[
 
 {nombre: "harry potter y la piedra filosofal", precio:2340,img:"img.jpg", stock:10},
@@ -155,7 +155,7 @@ for (const libro of Libros) {
     console.log(libro.precio);
     console.log(libro.nombre);
 }
-
+//////////////////////////////////////////////////////////////////////////////////
 const carrito = []
 console.log(carrito);
 
