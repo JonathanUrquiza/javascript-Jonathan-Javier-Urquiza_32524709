@@ -280,10 +280,11 @@ if (opcion == 1) {
  
 } else if (opcion == 3) {
 
-    const container = document.querySelector(".div")
+    const container = document.querySelector('ul#lista');
     for (const obj of tablaPeriodica) {
-        container.innerHTML += `nombre: ${obj.elemento}  `
-    
+        const li = document.createElement('li')
+        li.innerHTML += `nombre: ${obj.elemento}  `
+        container.appendChild(li)
     }
     
 } else if (opcion == 4) {
