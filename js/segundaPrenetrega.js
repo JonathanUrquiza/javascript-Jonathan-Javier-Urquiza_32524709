@@ -271,10 +271,12 @@ if (opcion == 1) {
     let numeroM = parseInt(prompt("indica cual es su numero de masa"))
     let grupo = prompt("indica a que grupo de la tabla periódica pertenece")
     tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo))
-    console.table(tablaPeriodica);
+
     const agree = document.querySelector(".mostrar")
     for (const muestra of tablaPeriodica) {
-        agree.innerHTML += `nombre: ${muestra.elemento} simbolo: ${muestra.simbolo} N° Atómico: ${muestra.numeroA} N° Másico: ${muestra.numeroM}`        
+        const li = document.createElement('li')
+        li.innerHTML += `nombre: ${muestra.elemento} simbolo: ${muestra.simbolo} N° Atómico: ${muestra.numeroA} N° Másico: ${muestra.numeroM}`
+        agree.appendChild(li)
     }
     
  
@@ -283,7 +285,7 @@ if (opcion == 1) {
     const container = document.querySelector('ul#lista');
     for (const obj of tablaPeriodica) {
         const li = document.createElement('li')
-        li.innerHTML += `nombre: ${obj.elemento}  `
+        li.innerHTML += `nombre: ${obj.elemento}`
         container.appendChild(li)
     }
     
