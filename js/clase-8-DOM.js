@@ -1,3 +1,5 @@
+document.title = "Manejo de DOM";
+
 //MANEJO DEL DOM
 
 const tablaPeriodica = [

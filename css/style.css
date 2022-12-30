@@ -22,7 +22,14 @@ a {
 i {
   color: white;
 }
-
+button {
+  color: aqua;
+  border: 2px;
+  font-size: 1.5em;
+  border-radius: 40px;
+  background-color: blueviolet;
+ padding: 0 15px 0 15px;
+}
 main {
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/logo/fondodetarjeta.jpg);
   background-repeat: no-repeat;

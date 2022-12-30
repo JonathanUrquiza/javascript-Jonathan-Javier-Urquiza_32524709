@@ -1,4 +1,4 @@
-document.title = "2° pre-entrega";
+document.title = "3° pre-entrega";
 let tablaPeriodica = [
     //Elemento base
     {
@@ -183,7 +183,6 @@ let tablaPeriodica = [
     },
 ]
 // input y botones
-const input1 = document.getElementById('elementoq')
 const input = document.querySelectorAll('input[type = "text"]')//todos los elementos input, del tipo text
 const btnSearch = document.getElementById('btnSearch')//llama a un elemento por ID
 const btnmostrar = document.getElementById('btnmostrar')
@@ -192,8 +191,9 @@ const btnver = document.getElementById('btnver')
 const buscar = document.querySelector(".buscar")
 const mostrar = document.querySelector(".mostrar")
 const lista = document.getElementById('lista')
-console.log(input);
+
 /////////////////////////FUNCIONES////////////////////////////////////////
+
 
 
 
@@ -218,8 +218,6 @@ function verArray(e) {
         lista.appendChild(li)
     }
 }
-btnver.onclick = verArray;
-
 //busqueda/filtrado por nombre
 function findQuimi(arr, filtro) {
    
@@ -228,124 +226,3 @@ function findQuimi(arr, filtro) {
     });
     return encontrado;
 }
-
-//buscar
-btnSearch.addEventListener('click', (e) => {
-    e.preventDefault()
-    const encontrado = findQuimi(tablaPeriodica,input1.value)
-    const parraf =document.createElement('p')
-    parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Arómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
-    buscar.appendChild(parraf)
-    
-    
-    console.log(encontrado);
-
-})
-/////////////////
-
-/////////////////////////////////////////////////////////////////////
-
-//      Calculadora de volumen
-
-/* function calcularSolucion(solvente, soluto) {
-    return solvente + soluto;
-}
-function calcularSoluto(solucion, solvente) {
-    return solucion - solvente;
-}
-function calcularSolvente(solucion, soluto) {
-    return solucion - soluto;
-}
-*/
-
-
-///////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////
-
-let opcion = prompt("ingrese \n1 Buscar elemento en la tabla. \n2 Agregar elemento y ver la tabla. \n3 ver tabla completa.");
-
-if (opcion == 1) {
-
-      let busca = prompt("ingrese el elemento quimico que deseas encontrar")
-    const elEncontrados = findQuimi(tablaPeriodica, busca)
-    buscar.innerHTML+=  `nombre:${elEncontrados.elemento} simbolo:${elEncontrados.simbolo} N° Arómico:${elEncontrados.numeroA} N° Masico:${elEncontrados.numeroM} grupo:${elEncontrados.grupo}`
-
-} else if (opcion == 2) {
-
-    //tablaPeriodica.pop() para borrar el ultimo
-
-    let elemento = prompt("ingresa el nombre del nuevo elemento");
-    let simbolo = prompt("ingresa el simbolo que lo identifica");
-    let numeroA = parseInt(prompt("indica cual es su numero atómico"));
-    let numeroM = parseInt(prompt("indica cual es su numero de masa"));
-    let grupo = prompt("indica a que grupo de la tabla periódica pertenece");
-
-    tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo));
-
-    for (const obj of tablaPeriodica) {
-        const li = document.createElement('li')
-        li.innerHTML = `nombre: ${obj.elemento} simbolo: ${obj.simbolo} N° Atómico: ${obj.numeroA} N° Másico: ${obj.numeroM} grupo: ${obj.grupo}`
-        mostrar.appendChild(li)
-    }
-
-
-} else if (opcion == 3) {
-
-     for (const obj of tablaPeriodica) {
-        const li = document.createElement('li')
-        li.innerHTML += `N° Atómico: ${obj.numeroA} nombre: ${obj.elemento}`
-        lista.appendChild(li)
-    }
-
-
-} else if (opcion == 4) {
-
-    
-
-
-} else {
-    console.log("fin de operaciones");
-} 
-/* let operacion = parseInt(prompt("ingrese \n1 para calcular el volumen de la solución, \n2 para calcular el volumen del soluto, \n3 para calcular el volumen del solvente, \n4 para salir"));
-
-let resultado = 0;
-
-do {
-if (operacion == 1) {
-let soluto = parseFloat(prompt("ingrese el volumen del soluto"));
-let solvente = parseFloat(prompt("ingrese el volumen del solvente"))
-resultado = calcularSolucion(solvente, soluto);
-alert(`El resultad de la suma es: ${resultado}`);
-} else if (operacion == 2) {
-let solucion =parseFloat(prompt("ingrse el volumen de la solucion"))
-let solvente = parseFloat(prompt("ingrese el volumen del solvente"))
-resultado = calcularSoluto(solucion, solvente);
-alert(`El resultado de la resta es: ${resultado}`);
-} else if (operacion == 3) {
-let solucion =parseFloat(prompt("ingrse el volumen de la solucion"))
-let soluto = parseFloat(prompt("ingrese el volumen del soluto"));
-resultado = calcularSolvente(solucion, soluto);
-alert(`El resultado de la multiplicación es: ${resultado}`);
-}else {
-alert("la opción seleccionada no existe");
-}  
-} while (operacion != 4); */
-
-
-
-
-
-
-
-
-/* 
-function hacerClick (){
-    for (const obj of tablaPeriodica) {
-        const li = document.createElement('li')
-        li.innerHTML = `N° Atómico: ${obj.numeroA} nombre: ${obj.elemento}`
-        lista.appendChild(li)
-    }
-}
-btnver.addEventListener('click',hacerClick) */
-/////////////////////////////////////////////////////
