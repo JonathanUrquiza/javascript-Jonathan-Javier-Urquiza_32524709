@@ -184,6 +184,12 @@ let tablaPeriodica = [
 ]
 // input y botones
 const input1 = document.getElementById('elementoq')
+const inputName = document.getElementById('name'),
+inputSimbol = document.getElementById('simbol'),
+inputAtomic = document.getElementById('atomic'),
+inputMass = document.getElementById('mass'),
+inputGrup = document.getElementById('grup')
+
 const input = document.querySelectorAll('input[type = "text"]')//todos los elementos input, del tipo text
 const btnSearch = document.getElementById('btnSearch')//llama a un elemento por ID
 const btnmostrar = document.getElementById('btnmostrar')
@@ -194,20 +200,42 @@ const mostrar = document.querySelector(".mostrar")
 const lista = document.getElementById('lista')
 console.log(input);
 /////////////////////////FUNCIONES////////////////////////////////////////
-
+//leer valores del campo
+function leerValoresCampos() {
+    
+}
 
 
 //Funcion constructora
 class Quimico {
-    constructor(elemento, simbolo, numeroM, grupo) {
+    constructor(elemento, simbolo, numeroA, numeroM, grupo) {
         this.elemento = elemento;
         this.simbolo = simbolo;
-        this.numeroA = tablaPeriodica.length + 1;
-        this.numeroM = parseFloat(numeroM);
+        this.numeroA = numeroA;
+        this.numeroM = numeroM;
         this.grupo = grupo;
 
     }
 }
+//busqueda/filtrado por nombre
+function findQuimi(arr, filtro) {
+   
+    const encontrado = arr.find((el) => {
+        return el.elemento.includes(filtro)
+    });
+    return encontrado;
+}
+//buscar
+function buscador(e) {
+    e.preventDefault();
+    const encontrado = findQuimi(tablaPeriodica,input1.value)
+    const parraf =document.createElement('p')
+    parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
+    buscar.appendChild(parraf)
+}
+
+btnSearch.onclick = buscador;
+
 
 //ver array de objetos
 function verArray(e) {
@@ -220,28 +248,63 @@ function verArray(e) {
 }
 btnver.onclick = verArray;
 
-//busqueda/filtrado por nombre
-function findQuimi(arr, filtro) {
-   
-    const encontrado = arr.find((el) => {
-        return el.elemento.includes(filtro)
-    });
-    return encontrado;
-}
 
-//buscar
-btnSearch.addEventListener('click', (e) => {
+//funcion Crear HTML
+
+function crearHtml(el){
+    //llamo a un elemento contenedor 
+    const contenedor= document.querySelector('#contenedor')
+    //creo una variable con un estuctura html
+    let html= `<div class="card">
+    <img src=" ./img/${el.img}" alt="${el.nombre}">
+    <hr>
+    <h3>${el.elemento}</h3>
+                  <p>Simbolo: ${el.simbolo} </p>
+                  <div class="card-action">
+                  <button id="">Comprar</button>
+                  </div>
+                  </div>`;
+                  //se la agrego al contenedor
+                  contenedor.innerHTML = html;
+                }
+btnSearch.onclick = crearHtml;
+
+
+
+//ver
+btnmostrar.addEventListener('click',(e)=>{
+    
+    e.preventDefault()
+    
+
+
+    let elemento = input[1].value;
+    let simbolo = input[2].value;
+    let numeroA = input[3].value;
+    let numeroM = input[4].value;
+    let grupo = input[5].value;
+    tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo));
+    
+    
+    for (const agregado of tablaPeriodica) {
+        const liagregado = document.createElement('li');
+    liagregado.innerHTML = `nombre: ${agregado.elemento} simbolo: ${agregado.simbolo} N° Atómico: ${agregado.numeroA} N° Masico: ${agregado.numeroM} Grupo: ${agregado.grupo}` 
+    mostrar.appendChild(liagregado)
+
+    }
+    
+    
+})
+
+
+/////////////////buscador de elementos//////////////////////////
+/* btnSearch.addEventListener('click', (e) => {
     e.preventDefault()
     const encontrado = findQuimi(tablaPeriodica,input1.value)
     const parraf =document.createElement('p')
-    parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Arómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
+    parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
     buscar.appendChild(parraf)
-    
-    
-    console.log(encontrado);
-
-})
-/////////////////
+}) */
 
 /////////////////////////////////////////////////////////////////////
 
@@ -263,7 +326,7 @@ function calcularSolvente(solucion, soluto) {
 
 //////////////////////////////////////////////////////////////////
 
-let opcion = prompt("ingrese \n1 Buscar elemento en la tabla. \n2 Agregar elemento y ver la tabla. \n3 ver tabla completa.");
+/* let opcion = prompt("ingrese \n1 Buscar elemento en la tabla. \n2 Agregar elemento y ver la tabla. \n3 ver tabla completa.");
 
 if (opcion == 1) {
 
@@ -306,7 +369,7 @@ if (opcion == 1) {
 
 } else {
     console.log("fin de operaciones");
-} 
+}  */
 /* let operacion = parseInt(prompt("ingrese \n1 para calcular el volumen de la solución, \n2 para calcular el volumen del soluto, \n3 para calcular el volumen del solvente, \n4 para salir"));
 
 let resultado = 0;

@@ -180,16 +180,105 @@ let tablaPeriodica = [
         electroNegatividad: 0,
         grupo: "gas noble",
     },
-]
+];
 //console.table(tablaPeriodica);
 
-/* let total = 0;
+const numeros = [1,2,3,4,5,6,3,1,7];
+const productos = [
+    { id: 1, nombre: "Arroz", precio: 124 },
+    { id: 2, nombre: "Papa", precio: 90 },
+    { id: 3, nombre: "Tomate", precio: 204 },
+    { id: 4, nombre: "Morrón", precio: 870 },
+    { id: 5, nombre: "Pan", precio: 240 },
+    { id: 6, nombre: "Fideos", precio: 124 },
+    { id: 7, nombre: "Fideos", precio: 124 },
+    { id: 8, nombre: "Arroz", precio: 500 },
+  ];
+  const aleatorio = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    0,
+    "$",
+    "+",
+    "-",
+    "@",
+    "!",
+    "/",
+    "*",
+    "%",
+  ];
+
+const array = [12, true, "dalma"]
+array.push("pablo")
+
+
+//este array solo hace la sumatoria
+let total = 0;
 for (let i = 0; i <= 10; i++) {
     total = total + i;
     
     console.log(total);
-} */
-/* function sumarRango(inicio, fin) {
+}
+///////////////////////////////////////////////////////
+//Esta funcio incorpora el for de la linea 274 solo que hay que marcarle el inicio y el final
+function sumarRango(inicio, fin) {
     let total = 0;
     for (let i = inicio; i <= fin; i++) {
         total = total + i;
@@ -197,34 +286,45 @@ for (let i = 0; i <= 10; i++) {
     }
     return total;
 }
-console.log(sumarRango(1,9)); */
+//recibe los valores!
+console.log(sumarRango(1,9));
+/////////////////////////////////////////////////////
+
 
 /*Las funciones de orden superior son las que reciben o return una funcion
 nos permiten abstrernos*/
 
 function mayorQue(n) {
-    return (m) => m > n
+    return (m) => m > n;
     //devuelve una funcion arrow 
 }
-/* let mayorQueDiez = mayorQue(10)
+let mayorQueDiez = mayorQue(10)
+console.log(mayorQueDiez);
 console.log(mayorQueDiez(12));
 console.log(mayorQueDiez(9));
-console.log(mayorQueDiez);
- */
 
+
+/* 
 //La calculadora
-function asignarOperacion(op) {
+function asignarOperacion(op){
     switch (op) {
-        case "+":
-            return (a, b) => a + b;
-            break;
-        case "-":
-            return (a, b) => a - b;
-        default:
-            return ()=> "El operador no es valido"
+      case "+":
+        return (a,b)=> a + b; 
+       
+      case "-":
+        return (a,b)=> a - b; 
+      case "*":
+        return (a,b)=> a * b;
+     case "/":
+        return (a,b)=> a / b; 
+        
+    
+      default:
+        return ()=> "El operador no es valido"
+        
     }
-}
-/* let suma = asignarOperacion("+")
+  }
+let suma = asignarOperacion("+")
 let resta = asignarOperacion("-")
 let noval =asignarOperacion ("0")
 console.log(suma(1,4));
@@ -235,22 +335,22 @@ console.log(noval(1, 4)); */
 ///////////////////////////////////////////
 //sirve para ver la lista completa de la tabla periodica
 //trae cada elemento del array y lo muestra
-const numeros = [1,2,3,4,5,6,3,1,7]
+
 function porCadaUno(arr, fn) {
-    for (const elemento of tablaPeriodica) {
-        fn(elemento)
+    for (const elemento of arr) {
+       fn(elemento)//esta trae el elemento
     }
     
 }
 
-porCadaUno(tablaPeriodica,console.log)
+//porCadaUno(tablaPeriodica,console.log)
 //-----------------------------------------
 //DUPLICA LOS VALORES DEL ARRAY SIEMPRE QUE SEAN NUMERICOS!!!
-const duplicado = [];
-porCadaUno(numeros, (elemento)=> {
-    duplicado.push(elemento * 2)
-    
+const duplicado=[];
+porCadaUno(numeros, (elemento)=>{
+duplicado.push(elemento * 2);
 })
+
 console.log(duplicado);
 
 //metodos nativos de js de busqueda y modificacion!!
@@ -278,7 +378,7 @@ console.log(eleQuimico);
 const filtro = tablaPeriodica.filter(el=>{
     return el.numeroA < 5
 })
-console.log(filtro);
+console.log(filtro);0
 /////////////////////////////////////////////////////////
 
 //some verifica la existecia de elemento en el array
@@ -288,9 +388,9 @@ const existe = tablaPeriodica.some((el)=>{
 console.log(existe);
 ////////////////////////////////////////////////////////////
 
-//map: devuelve un nuevo array con lo elemento deacuerdo a la condicion pedida
+//map: devuelve un nuevo array con lo elemento de acuerdo a la condicion pedida
 
-const nuevaTabla=tablaPeriodica.map(el=>{
+const nuevaTabla = tablaPeriodica.map(el=>{
     return el.nombre
 })
 console.log(nuevaTabla);
