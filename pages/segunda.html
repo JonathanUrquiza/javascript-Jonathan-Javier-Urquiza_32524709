@@ -12,8 +12,9 @@
 
 <body>
     <header class="d-flex flex-column w-100 h-100">
-        <div class="d-flex flex-column align-items-center justify-content-between ">
-            <h1>Logo</h1>
+        <div class="d-flex flex-row align-items-center justify-content-between ">
+            <img src="../img/codercircular.png" alt="" srcset="" class="">
+            <h1>Javascript</h1>
             <ul class="list-unstyled w-100 d-flex flex-row justify-content-around">
                 <li><a href="primera.html">Primera pre-entrega</a></li>
                 <li><a href="segunda.html">Segunda Pre-entrega</a></li>
@@ -43,7 +44,7 @@
     </header>
     <main class="container">
         <section class="d-flex flex-column align-items-center">
-            <div  class="d-flex flex-row align-items-center justify-content-around">
+            <div class="d-flex flex-row align-items-center justify-content-around">
                 <h1>buscador</h1>
                 <div>
                     <form action="">
@@ -54,23 +55,23 @@
             </div>
             <div id="contenedor">
                 <!-- contenido dinamico -->
-              </div>
+            </div>
             <div class="buscar">
-              
+
             </div>
         </section>
 
 
-        <section  class="d-flex flex-column align-items-center">
-            <div   class="d-flex flex-row align-items-center justify-content-around">
+        <section class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-row align-items-center justify-content-around">
                 <h1>Agregar elemento Químico</h1>
                 <div>
                     <form action="">
-                        <input type="text" id="name"   placeholder="nombre">
+                        <input type="text" id="name" placeholder="nombre">
                         <input type="text" id="Simbol" placeholder="simbolo">
-                        <input type="text"  id="atomic" placeholder="numero atomico">
+                        <input type="text" id="atomic" placeholder="numero atomico">
                         <input type="text" id="mass" placeholder="numero masico">
-                        <input type="text" id="grup" placeholder="grupo"> 
+                        <input type="text" id="grup" placeholder="grupo">
                         <button type="submit" id="btnmostrar">Agregar y ver</button>
                     </form>
                 </div>
@@ -83,7 +84,7 @@
 
 
         <section class="d-flex flex-column align-items-center">
-            <div  class="d-flex flex-row align-items-center justify-content-around">
+            <div class="d-flex flex-row align-items-center justify-content-around">
                 <h1>Lista de elemento Químicos</h1>
                 <div>
                     <form action="">
@@ -95,13 +96,15 @@
             </ul>
             </div>
         </section>
-        <section  class="d-flex flex-row align-items-baseline justify-content-around">
+        <section class="d-flex flex-column align-items-center justify-content-around">
             <h1>Calculadora</h1>
-            <div>
-                <form action="">
-                    <input type="text">
-                </form>
-            </div>
+            <form action="" class="d-flex flex-column justify-content-center align-items-center" id="Calculadora">
+                <input type="text">
+                <p id="operador">+</p>
+                <input type="text">
+                <h3 id="resultado">4</h3>
+                <button id="operar">Resultado</button>
+            </form>
         </section>
     </main>
     <footer>

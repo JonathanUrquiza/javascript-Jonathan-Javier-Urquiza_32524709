@@ -6,7 +6,19 @@
   box-sizing: border-box;
   list-style: none;
 }
-
+header {
+  color: bisque;
+  background-image: url(../img/fondo/locura.jpg);
+  background-position: center;
+  background-size: 125% 125%;
+  background-repeat: no-repeat;
+  
+}
+img {
+  max-width: 20%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -39,7 +51,7 @@ button {
  padding: 0 15px 0 15px;
 }
 main {
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/logo/fondodetarjeta.jpg);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/tabla-periodica.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

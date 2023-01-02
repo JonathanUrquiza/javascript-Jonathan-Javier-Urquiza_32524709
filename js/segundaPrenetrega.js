@@ -229,7 +229,7 @@ function findQuimi(arr, filtro) {
 function buscador(e) {
     e.preventDefault();
     const encontrado = findQuimi(tablaPeriodica,input1.value)
-    const parraf =document.createElement('p')
+    const parraf =document.createElement('li')
     parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
     buscar.appendChild(parraf)
 }
@@ -267,7 +267,7 @@ function crearHtml(el){
                   //se la agrego al contenedor
                   contenedor.innerHTML = html;
                 }
-btnSearch.onclick = crearHtml;
+//btnSearch.onclick = crearHtml;
 
 
 
