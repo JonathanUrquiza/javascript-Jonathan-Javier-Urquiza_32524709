@@ -201,7 +201,6 @@ let tablaPeriodica = [
     },
   ];
 // input y botones
-const input1 = document.getElementById('elementoq')
 const inputName = document.getElementById('name'),
   inputSimbol = document.getElementById('simbol'),
   inputAtomic = document.getElementById('atomic'),
@@ -217,6 +216,7 @@ const buscar = document.querySelector(".buscar")
 const mostrar = document.querySelector(".mostrar")
 const lista = document.getElementById('lista')
 let contenedor = document.querySelector("#contenedor");
+console.log(input);
 
 /////////////////////////FUNCIONES///////////////////////////////////////////////
 
@@ -231,9 +231,18 @@ function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
     this.img = img;
 
 }
+//limpiar inner
+function limpiarInner() {
+    contenedor.innerHTML = "";
+}
 //limpiar campos
 function limpiarCampos() {
-    contenedor.innerHTML = "";
+  input[0].value = "";
+  input[1].value = "";
+  input[2].value = "";
+  input[3].value = "";
+  input[4].value = "";
+ 
 }
 //busqueda/filtrado por nombre
 function findQuimi(arr, filtro) {
@@ -312,9 +321,9 @@ function crearElemento(encontrado) {
 //bucar elemento quimico
 btnBuscar.addEventListener('click', (e) => {
     e.preventDefault();
+    limpiarInner();
     limpiarCampos();
-    const encontrado = findQuimi(tablaPeriodica, input1.value);
-    console.log(encontrado);
+    const encontrado = findQuimi(tablaPeriodica, input[0].value);
     crearElemento(encontrado);
 })
 //agregar elemento
@@ -322,14 +331,14 @@ btnagregar.addEventListener('click', (e) => {
 
 
     e.preventDefault()
-    contenedor.innerHTML = "";
+     limpiarInner();
   
-    let nombre = input[1].value;
-    let simbolo = input[2].value;
-    let id = input[3].value;
-    let numeroM = input[4].value;
-    let grupo = input[5].value;
-    let img = input[6].value;
+    let nombre = input[0].value;
+    let simbolo = input[1].value;
+    let id = input[2].value;
+    let numeroM = input[3].value;
+    let grupo = input[4].value;
+    let img = input[5].value;
   
   
     tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo, img));
@@ -343,12 +352,3 @@ btnver.addEventListener('click',(e)=>{
     limpiarCampos();
     crearHtml(tablaPeriodica);
 })
-
-
-
-/* //<img src="./img/${img}" alt="">
-           <img src="../img/elementosperiodicos/${encontrado.img}" alt="">
-caja.addEventListener('mouseleave', ()=>{
-  caja.style.backgroundImage= 'url("./img/australia.jpg")'
-  pais.innerHTML="<h2>Australia</h2>"
- */

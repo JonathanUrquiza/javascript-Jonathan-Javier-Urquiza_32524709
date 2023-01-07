@@ -46,6 +46,18 @@ button {
   background-color: blueviolet;
   padding: 0 15px 0 15px;
 }
+.botones {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+input {
+  border: 1px solid  blueviolet;
+  border-radius: 40px;
+  text-align: center;
+}
 
 main {
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/tabla-periodica.png);

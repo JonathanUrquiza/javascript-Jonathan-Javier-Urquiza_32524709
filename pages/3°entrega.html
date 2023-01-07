@@ -46,18 +46,7 @@
     </header>
     <main class="container">
         <section class="d-flex flex-column align-items-center">
-            <div class="d-flex flex-row align-items-center justify-content-around">
-                <h1>Buscador</h1>
-                <div>
-                    <form action="">
-                        <input type="text" placeholder="Buscar elemento" id="elementoq">
-                        <button type="submit" id="btnBuscar">Buscar</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <section class="d-flex flex-column align-items-center">
-            <div class="d-flex flex-row align-items-center justify-content-around">
+            <div class="d-flex flex-column align-items-center justify-content-around">
                 <h1>Agregar elemento Químico</h1>
                 <div>
                     <form action="">
@@ -66,20 +55,17 @@
                         <input type="text" id="atomic" placeholder="numero atomico">
                         <input type="text" id="mass" placeholder="numero masico">
                         <input type="text" id="grup" placeholder="grupo">
-                        <button type="submit" id="btnagregar">Agregar y ver</button>
+                        <input type="file" id="files" name="files" multiple>
+                        <div class="botones">
+                            <button type="submit" id="btnagregar">Agregar y ver</button>
+                            <button type="submit" id="btnBuscar">Buscar</button>
+                            <button type="submit" id="btnver">Ver lista de elementos</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
         <section class="d-flex flex-column align-items-center">
-            <div class="d-flex flex-row align-items-center justify-content-around">
-                <h1>Lista de elemento Químicos</h1>
-                <div>
-                    <form action="">
-                        <button type="submit" id="btnver">Ver lista de elementos</button>
-                    </form>
-                </div>
-            </div>
             <div id="contenedor">
                 <!-- contenido dinamico -->
             </div>
