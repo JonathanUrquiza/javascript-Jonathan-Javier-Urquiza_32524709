@@ -2,9 +2,9 @@ document.title = "2° pre-entrega";
 let tablaPeriodica = [
   //Elemento base
   {
-    elemento: "Hidrógeno",
+    nombre: "Hidrógeno",
     simbolo: "H",
-    numeroA: 1,
+    id: 1,
     numeroM: 1.008,
     estadoDeOxidacion: 1,
     estructuraElectronica: "1s1",
@@ -12,9 +12,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Helio",
+    nombre: "Helio",
     simbolo: "He",
-    numeroA: 2,
+    id: 2,
     numeroM: 4.003,
     estadoDeOxidacion: 0,
     estructuraElectronica: "1s2",
@@ -22,9 +22,9 @@ let tablaPeriodica = [
     grupo: "gas noble",
   },
   {
-    elemento: "Litio",
+    nombre: "Litio",
     simbolo: "Li",
-    numeroA: 3,
+    id: 3,
     numeroM: 6.968,
     estadoDeOxidacion: 1,
     estructuraElectronica: "1s2 2s1",
@@ -32,9 +32,9 @@ let tablaPeriodica = [
     grupo: "metal alcalino",
   },
   {
-    elemento: "Berilio",
+    nombre: "Berilio",
     simbolo: "Be",
-    numeroA: 4,
+    id: 4,
     numeroM: 9.012,
     estadoDeOxidacion: 2,
     estructuraElectronica: "1s2 2s2",
@@ -42,9 +42,9 @@ let tablaPeriodica = [
     grupo: "alcalinoterreo",
   },
   {
-    elemento: "Boro",
+    nombre: "Boro",
     simbolo: "B",
-    numeroA: 5,
+    id: 5,
     numeroM: 10.81,
     estadoDeOxidacion: 3,
     estructuraElectronica: "1s2 2s2 2p3",
@@ -52,9 +52,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Carbono",
+    nombre: "Carbono",
     simbolo: "C",
-    numeroA: 6,
+    id: 6,
     numeroM: 12.01,
     estadoDeOxidacion: "",
     estructuraElectronica: "1s2 2s2 2p2",
@@ -62,9 +62,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Nitrógeno",
+    nombre: "Nitrógeno",
     simbolo: "N",
-    numeroA: 7,
+    id: 7,
     numeroM: 14.01,
     estadoDeOxidacion: "",
     estructuraElectronica: "",
@@ -72,9 +72,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Oxígeno",
+    nombre: "Oxígeno",
     simbolo: "O",
-    numeroA: 8,
+    id: 8,
     numeroM: 16.0,
     estadoDeOxidacion: -2,
     estructuraElectronica: "",
@@ -82,9 +82,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Flúor",
+    nombre: "Flúor",
     simbolo: "F",
-    numeroA: 9,
+    id: 9,
     numeroM: 19.0,
     estadoDeOxidacion: -1,
     estructuraElectronica: "",
@@ -92,9 +92,9 @@ let tablaPeriodica = [
     grupo: "alógenos",
   },
   {
-    elemento: "Neón",
+    nombre: "Neón",
     simbolo: "Ne",
-    numeroA: 10,
+    id: 10,
     numeroM: 20.18,
     estadoDeOxidacion: 0,
     estructuraElectronica: "",
@@ -102,9 +102,9 @@ let tablaPeriodica = [
     grupo: "gas noble",
   },
   {
-    elemento: "Sodio",
+    nombre: "Sodio",
     simbolo: "Na",
-    numeroA: 11,
+    id: 11,
     numeroM: 22.99,
     estadoDeOxidacion: 1,
     estructuraElectronica: "",
@@ -112,9 +112,9 @@ let tablaPeriodica = [
     grupo: "metal alcalino",
   },
   {
-    elemento: "Magnesio",
+    nombre: "Magnesio",
     simbolo: "Mg",
-    numeroA: 12,
+    id: 12,
     numeroM: 24.31,
     estadoDeOxidacion: 2,
     estructuraElectronica: "",
@@ -122,9 +122,9 @@ let tablaPeriodica = [
     grupo: "metal alcalinoterreo",
   },
   {
-    elemento: "Aluminio",
+    nombre: "Aluminio",
     simbolo: "Al",
-    numeroA: 13,
+    id: 13,
     numeroM: 26.98,
     estadoDeOxidacion: 0,
     estructuraElectronica: "",
@@ -132,9 +132,9 @@ let tablaPeriodica = [
     grupo: "gas noble",
   },
   {
-    elemento: "Silicio",
+    nombre: "Silicio",
     simbolo: "Si",
-    numeroA: 14,
+    id: 14,
     numeroM: 28.09,
     estadoDeOxidacion: 4,
     estructuraElectronica: "",
@@ -142,9 +142,9 @@ let tablaPeriodica = [
     grupo: "Metaloide",
   },
   {
-    elemento: "Fósforo",
+    nombre: "Fósforo",
     simbolo: "P",
-    numeroA: 15,
+    id: 15,
     numeroM: 30.97,
     estadoDeOxidacion: "+- 3 5",
     estructuraElectronica: "",
@@ -152,9 +152,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Azufre",
+    nombre: "Azufre",
     simbolo: "S",
-    numeroA: 16,
+    id: 16,
     numeroM: 32.07,
     estadoDeOxidacion: "+- 2 4 6",
     estructuraElectronica: "",
@@ -162,9 +162,9 @@ let tablaPeriodica = [
     grupo: "calcógeno",
   },
   {
-    elemento: "Cloro",
+    nombre: "Cloro",
     simbolo: "Cl",
-    numeroA: 17,
+    id: 17,
     numeroM: 35.45,
     estadoDeOxidacion: "+- 1 3 5 7",
     estructuraElectronica: "",
@@ -172,9 +172,9 @@ let tablaPeriodica = [
     grupo: "halógeno",
   },
   {
-    elemento: "Argón",
+    nombre: "Argón",
     simbolo: "Ar",
-    numeroA: 18,
+    id: 18,
     numeroM: 39.95,
     estadoDeOxidacion: 0,
     estructuraElectronica: "",
@@ -191,205 +191,114 @@ const inputName = document.getElementById('name'),
   inputGrup = document.getElementById('grup')
 
 const input = document.querySelectorAll('input[type = "text"]')//todos los elementos input, del tipo text
-const btnSearch = document.getElementById('btnSearch')//llama a un elemento por ID
-const btnmostrar = document.getElementById('btnmostrar')
+const btnSBuscar = document.getElementById('btnBuscar')//llama a un elemento por ID
+const btnagregar = document.getElementById('btnagregar')
 const btnver = document.getElementById('btnver')
 //muestras
 const buscar = document.querySelector(".buscar")
 const mostrar = document.querySelector(".mostrar")
 const lista = document.getElementById('lista')
-console.log(input);
+let contenedor = document.querySelector("#contenedor");
+
 /////////////////////////FUNCIONES////////////////////////////////////////
 //Funcion constructora
 
-function Quimico(elemento, simbolo, numeroA, numeroM, grupo) {
-  this.elemento = elemento;
+function Quimico(nombre, simbolo, id, numeroM, grupo) {
+  this.nombre = nombre;
   this.simbolo = simbolo;
-  this.numeroA = numeroA;
+  this.id = id;
   this.numeroM = numeroM;
   this.grupo = grupo;
 
 }
-
+//Limpiar campos
+function limpiarCampos() {
+  return contenedor.innerHTML = "";
+}
 //busqueda/filtrado por nombre
 function findQuimi(arr, filtro) {
 
   const encontrado = arr.find((el) => {
-    return el.elemento.includes(filtro)
+    return el.nombre.includes(filtro)
   });
   return encontrado;
 }
+
+//funcion crear
+function crearHtml(array) {
+ 
+  let html;
+
+  for (const quimio of array) {
+    html =
+      `<div class="">
+        <div class = "card">
+            <div class ="card-title">
+                <p>${quimio.nombre}</p>
+                <p>${quimio.id}</p> 
+            </div>
+              <div class="card-content">
+                <span class ="card-title">${quimio.simbolo.toUpperCase()}</span>
+              </div>
+              <div class="card-data">
+              <p>electronegatividad</p>
+              <p>${quimio.electroNegatividad}</p>
+              </div>
+        </div>
+    </div>`;
+    contenedor.innerHTML += html
+  }
+}
+
+
+//crearHtml(tablaPeriodica);
+
+
 //buscar
 function buscador(e) {
   e.preventDefault();
-  buscar.innerHTML="";
+  limpiarCampos();
   const encontrado = findQuimi(tablaPeriodica, input1.value)
   const parraf = document.createElement('li')
-  parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
-  buscar.appendChild(parraf)
+  crearElemento(encontrado);
+  parraf.innerHTML += `nombre:${encontrado.nombre} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.id} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
+  contenedor.appendChild(parraf)
 }
 
-btnSearch.onclick = buscador;
+btnBuscar.onclick = buscador;
 
 
 //ver array de objetos
 function verArray(e) {
   e.preventDefault();
-  lista.innerHTML="";
-  for (const obj of tablaPeriodica) {
-    const li = document.createElement('li')
-    li.innerHTML = `N° Atómico: ${obj.numeroA} nombre: ${obj.elemento}`
-    lista.appendChild(li)
-  }
+ limpiarCampos()
+
+  crearHtml(tablaPeriodica);
 }
-btnver.onclick = verArray;
-
-
-//funcion Crear HTML
-
-function crearHtml(el) {
-  //llamo a un elemento contenedor 
-  const contenedor = document.querySelector('#contenedor')
-  //creo una variable con un estuctura html
-  let html = `<div class="card">
-    <img src=" ./img/${el.img}" alt="${el.nombre}">
-    <hr>
-    <h3>${el.elemento}</h3>
-                  <p>Simbolo: ${el.simbolo} </p>
-                  <div class="card-action">
-                  <button id="">Comprar</button>
-                  </div>
-                  </div>`;
-  //se la agrego al contenedor
-  contenedor.innerHTML = html;
-}
-//btnSearch.onclick = crearHtml;
-
-
+btnver.onclick=verArray
 
 //esto esta mal!
-btnmostrar.addEventListener('click', (e) => {
+btnagregar.addEventListener('click', (e) => {
+
 
   e.preventDefault()
-  mostrar.innerHTML="";
+  mostrar.innerHTML = "";
 
-  let elemento = input[1].value;
+  let nombre = input[1].value;
   let simbolo = input[2].value;
-  let numeroA = input[3].value;
+  let id = input[3].value;
   let numeroM = input[4].value;
   let grupo = input[5].value;
 
 
-  tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo));
-
-
-  for (const agregado of tablaPeriodica) {
+  tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo));
+  /* for (const agregado of tablaPeriodica) {
     const liagregado = document.createElement('li');
-    liagregado.innerHTML = `nombre: ${agregado.elemento} simbolo: ${agregado.simbolo} N° Atómico: ${agregado.numeroA} N° Masico: ${agregado.numeroM} Grupo: ${agregado.grupo}`
+    liagregado.innerHTML = `nombre: ${agregado.nombre} simbolo: ${agregado.simbolo} N° Atómico: ${agregado.id} N° Masico: ${agregado.numeroM} Grupo: ${agregado.grupo}`
     mostrar.appendChild(liagregado)
 
-  }
+  } */
+  crearHtml(tablaPeriodica);
 
 
 })
-/* function mostrame(mensaje) {
-  console.log(mensaje);
-}
-btnmostrar.onclick=mostrame(elemento, simbolo, numeroA,numeroM, grupo);
- */
-
-
-/*btnmostrar.onclick=ingresoDatos(elemento, simbolo, numeroA, numeroM, grupo); */
-/////////////////buscador de elementos//////////////////////////
-/* btnSearch.addEventListener('click', (e) => {
-    e.preventDefault()
-    const encontrado = findQuimi(tablaPeriodica,input1.value)
-    const parraf =document.createElement('p')
-    parraf.innerHTML += `nombre:${encontrado.elemento} simbolo:${encontrado.simbolo} N° Atómico:${encontrado.numeroA} N° Masico:${encontrado.numeroM} grupo:${encontrado.grupo}`
-    buscar.appendChild(parraf)
-}) */
-
-//      Calculadora de volumen
-
-/* function calcularSolucion(solvente, soluto) {
-    return solvente + soluto;
-}
-function calcularSoluto(solucion, solvente) {
-    return solucion - solvente;
-}
-function calcularSolvente(solucion, soluto) {
-    return solucion - soluto;
-}
-*/
-
-///////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////
-
-/* let opcion = prompt("ingrese \n1 Buscar elemento en la tabla. \n2 Agregar elemento y ver la tabla. \n3 ver tabla completa.");
-
-if (opcion == 1) {
-
-      let busca = prompt("ingrese el elemento quimico que deseas encontrar")
-    const elEncontrados = findQuimi(tablaPeriodica, busca)
-    buscar.innerHTML+=  `nombre:${elEncontrados.elemento} simbolo:${elEncontrados.simbolo} N° Arómico:${elEncontrados.numeroA} N° Masico:${elEncontrados.numeroM} grupo:${elEncontrados.grupo}`
-
-} else if (opcion == 2) {
-
-    //tablaPeriodica.pop() para borrar el ultimo
-
-    let elemento = prompt("ingresa el nombre del nuevo elemento");
-    let simbolo = prompt("ingresa el simbolo que lo identifica");
-    let numeroA = parseInt(prompt("indica cual es su numero atómico"));
-    let numeroM = parseInt(prompt("indica cual es su numero de masa"));
-    let grupo = prompt("indica a que grupo de la tabla periódica pertenece");
-
-    tablaPeriodica.push(new Quimico(elemento, simbolo, numeroA, numeroM, grupo));
-
-    for (const obj of tablaPeriodica) {
-        const li = document.createElement('li')
-        li.innerHTML = `nombre: ${obj.elemento} simbolo: ${obj.simbolo} N° Atómico: ${obj.numeroA} N° Másico: ${obj.numeroM} grupo: ${obj.grupo}`
-        mostrar.appendChild(li)
-    }
-
-
-
-
-} else {
-    console.log("fin de operaciones");
-}  */
-/* let operacion = parseInt(prompt("ingrese \n1 para calcular el volumen de la solución, \n2 para calcular el volumen del soluto, \n3 para calcular el volumen del solvente, \n4 para salir"));
-
-let resultado = 0;
-
-do {
-if (operacion == 1) {
-let soluto = parseFloat(prompt("ingrese el volumen del soluto"));
-let solvente = parseFloat(prompt("ingrese el volumen del solvente"))
-resultado = calcularSolucion(solvente, soluto);
-alert(`El resultad de la suma es: ${resultado}`);
-} else if (operacion == 2) {
-let solucion =parseFloat(prompt("ingrse el volumen de la solucion"))
-let solvente = parseFloat(prompt("ingrese el volumen del solvente"))
-resultado = calcularSoluto(solucion, solvente);
-alert(`El resultado de la resta es: ${resultado}`);
-} else if (operacion == 3) {
-let solucion =parseFloat(prompt("ingrse el volumen de la solucion"))
-let soluto = parseFloat(prompt("ingrese el volumen del soluto"));
-resultado = calcularSolvente(solucion, soluto);
-alert(`El resultado de la multiplicación es: ${resultado}`);
-}else {
-alert("la opción seleccionada no existe");
-}
-} while (operacion != 4); */
-
-/*
-function hacerClick (){
-    for (const obj of tablaPeriodica) {
-        const li = document.createElement('li')
-        li.innerHTML = `N° Atómico: ${obj.numeroA} nombre: ${obj.elemento}`
-        lista.appendChild(li)
-    }
-}
-btnver.addEventListener('click',hacerClick) */
-/////////////////////////////////////////////////////
