@@ -29,4 +29,5 @@ const usuariosLS = recuperaLS();
 btnLog.addEventListener('click',(e)=>{
     e.preventDefault()
     inicioSecion(usuariosLS)
+   
 });

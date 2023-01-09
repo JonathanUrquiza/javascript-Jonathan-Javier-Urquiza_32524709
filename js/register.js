@@ -49,5 +49,5 @@ btnRegister.addEventListener('click', (e)=>{
     limpiarCampos()
     guardarUsuario(newUser)
     guardarEnstorage(usuarios)
-
+    window.location.href = "pages/login.html"
 })
