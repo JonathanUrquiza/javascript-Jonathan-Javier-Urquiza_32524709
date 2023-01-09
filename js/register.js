@@ -1,11 +1,13 @@
-const register = document.querySelector("register"),
+document.title = "Registrarse";
+const register = document.querySelector("#register"),
 email = document.querySelector("#email"),
 nombre = document.querySelector("#nombre"),
 userReg = document.querySelector("#userReg"),
-passReg = document.querySelector8("#passReg"),
-btnRegistrar = document.querySelector("#registrar");
+passReg = document.querySelector("#passReg"),
+btnRegister = document.querySelector("#btnRegister");
 
 let usuarios;
+//si hay datos en LS? (usuarios = LS: usuarios=[])
 if (localStorage.getItem("usuarios")) {
     usuarios=JSON.parse(localStorage.getItem("usuarios"))
 } else {
@@ -27,6 +29,10 @@ function limpiarCampos() {
     passReg.value = "";
     email.value = "";
 }
+//validar campos vacios
+function camposVacios() {
+    //algo
+}
 //guardar usuario
 function guardarUsuario(usuario) {
     return usuarios.push(usuario)
@@ -37,9 +43,10 @@ function guardarEnstorage(elemento) {
 }
 //evento
 
-btnRegistrar.addEventListener('click', (e)=>{
+btnRegister.addEventListener('click', (e)=>{
     e.preventDefault();
     let newUser = new Usuarios(nombre.value, userReg.value, email.value, passReg.value)
+    limpiarCampos()
     guardarUsuario(newUser)
     guardarEnstorage(usuarios)
 
