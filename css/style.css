@@ -45,6 +45,7 @@ button {
   border-radius: 40px;
   background-color: blueviolet;
   padding: 0 15px 0 15px;
+  margin: 3px;
 }
 .botones {
   margin-top: 5px;

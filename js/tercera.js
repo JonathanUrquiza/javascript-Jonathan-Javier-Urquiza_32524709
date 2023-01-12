@@ -201,21 +201,14 @@ let tablaPeriodica = [
     },
   ];
 // input y botones
-const inputName = document.getElementById('name'),
-  inputSimbol = document.getElementById('simbol'),
-  inputAtomic = document.getElementById('atomic'),
-  inputMass = document.getElementById('mass'),
-  inputGrup = document.getElementById('grup')
-
 const input = document.querySelectorAll('input[type = "text"]')//todos los elementos input, del tipo text
 const btnBuscar = document.getElementById('btnBuscar')//llama a un elemento por ID
 const btnagregar = document.getElementById('btnagregar')
 const btnver = document.getElementById('btnver')
 //muestras
-const buscar = document.querySelector(".buscar")
-const mostrar = document.querySelector(".mostrar")
-const lista = document.getElementById('lista')
+
 let contenedor = document.querySelector("#contenedor");
+
 console.log(input);
 
 /////////////////////////FUNCIONES///////////////////////////////////////////////
@@ -237,7 +230,7 @@ function limpiarInner() {
 }
 //limpiar campos
 function limpiarCampos() {
-  input[0].value = "";
+ 
   input[1].value = "";
   input[2].value = "";
   input[3].value = "";
@@ -245,9 +238,9 @@ function limpiarCampos() {
  
 }
 //busqueda/filtrado por nombre
-function findQuimi(arr, filtro) {
+function findQuimi(tablaPeriodica, filtro) {
 
-    const encontrado = arr.find((el) => {
+    const encontrado = tablaPeriodica.find((el) => {
         return el.nombre.includes(filtro)
     });
     return encontrado;
@@ -279,6 +272,11 @@ function crearHtml(array) {
               <p>electronegatividad</p>
               <p>${quimio.electroNegatividad}</p>
               </div>
+              <div>
+            <form>
+            <button id="add">Agregar al carrito</button>
+            <button id="comprar">Seprar</button>
+            </form></div>
         </div>
     </div>`;
     contenedor.innerHTML += html
@@ -307,6 +305,11 @@ function crearElemento(encontrado) {
             <p>electronegatividad</p>
             <p>${encontrado.electroNegatividad}</p>
             </div>
+            <div>
+            <form>
+            <button id="btnCalculo">Agregar a la calculadora</button>
+            <button id="btnBuy">Seprar</button>
+            </form></div>
       </div>
   </div>`;
   contenedor.innerHTML += html
@@ -316,14 +319,13 @@ function crearElemento(encontrado) {
 
 
 //////////////////////EVENTOS//////////////////////////
-
-
 //bucar elemento quimico
 btnBuscar.addEventListener('click', (e) => {
     e.preventDefault();
     limpiarInner();
     limpiarCampos();
-    const encontrado = findQuimi(tablaPeriodica, input[0].value);
+    const encontrado = findQuimi(tablaPeriodica,input[0].value);
+    console.log(encontrado);
     crearElemento(encontrado);
 })
 //agregar elemento
@@ -333,12 +335,12 @@ btnagregar.addEventListener('click', (e) => {
     e.preventDefault()
      limpiarInner();
   
-    let nombre = input[0].value;
-    let simbolo = input[1].value;
-    let id = input[2].value;
-    let numeroM = input[3].value;
-    let grupo = input[4].value;
-    let img = input[5].value;
+    let nombre = input[1].value;
+    let simbolo = input[2].value;
+    let id = input[3].value;
+    let numeroM = input[4].value;
+    let grupo = input[5].value;
+    let img = input[6].value;
   
   
     tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo, img));

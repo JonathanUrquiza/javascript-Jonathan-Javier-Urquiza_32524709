@@ -1,18 +1,27 @@
 document.title = "Registrarse";
-const register = document.querySelector("#register"),
+const formulario = document.querySelector("#form"),
 email = document.querySelector("#email"),
 nombre = document.querySelector("#nombre"),
 userReg = document.querySelector("#userReg"),
 passReg = document.querySelector("#passReg"),
+checkbox = document.querySelector("#checkbox"),
+parrafo = document.querySelector("p"),
 btnRegister = document.querySelector("#btnRegister");
 
 let usuarios;
-//si hay datos en LS? (usuarios = LS: usuarios=[])
-if (localStorage.getItem("usuarios")) {
-    usuarios=JSON.parse(localStorage.getItem("usuarios"))
-} else {
-    usuarios = [];
-}
+localStorage.getItem("usuarios")?usuarios=JSON.parse(localStorage.getItem("usuarios")):usuarios = [];
+
+function guardarLS(valor) {
+    let user = { usuario: email.value, pass: password.value };
+    if (user.usuario == "" || user.pass == "") {
+      parrafo.innerText = "Todos los campos son requeridos";
+      return;
+    } else {
+      valor === "localStorage" && localStorage.setItem("item", JSON.stringify(user));
+      valor === "sessionStorage" && sessionStorage.setItem("item", JSON.stringify(user));
+    }
+    return user;
+  }
 //contructor de usuarios
 class Usuarios {
     constructor (nombre, usuario, email, password){
@@ -28,10 +37,6 @@ function limpiarCampos() {
     userReg.value = "";
     passReg.value = "";
     email.value = "";
-}
-//validar campos vacios
-function camposVacios() {
-    //algo
 }
 //guardar usuario
 function guardarUsuario(usuario) {
@@ -49,5 +54,6 @@ btnRegister.addEventListener('click', (e)=>{
     limpiarCampos()
     guardarUsuario(newUser)
     guardarEnstorage(usuarios)
+    checkbox.checked ? guardarLS("localStorage") : guardarLS("sessionStorage");
     window.location.href = "pages/login.html"
 })
