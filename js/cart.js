@@ -5,6 +5,9 @@ btnBuy = document.getElementById('btnBuy'),
 btnCalculo = document.getElementById('btnCalculo')
 
 
+let carrito = JSON.parse(localStorage.getItem("separado"))
+console.log(carrito);
+
 
 
 
@@ -12,26 +15,26 @@ btnCalculo = document.getElementById('btnCalculo')
 
 
 //Crear elemento
-function addCart(encontrado) {
+function addCart(carrito) {
 
     let html;
     
     html =
     `<div class="">
     <div class = "card">
-    <h1>${encontrado.nombre}</h1>
+    <h1>${carrito.nombre}</h1>
           <div class ="card-title">
-              <p>${encontrado.id}</p> 
+              <p>${carrito.id}</p> 
           </div>
             <div class="card-content">
-              <span class ="card-title">${encontrado.simbolo.toUpperCase()}</span>
+              <span class ="card-title">${carrito.simbolo.toUpperCase()}</span>
               <div>
-              <img src="../img/${encontrado.img}" class="card-imge"/>
+              <img src="../img/${carrito.img}" class="card-imge"/>
               </div>
             </div>
             <div class="card-data">
             <p>electronegatividad</p>
-            <p>${encontrado.electroNegatividad}</p>
+            <p>${carrito.electroNegatividad}</p>
             </div>
             <div>
             <form>
