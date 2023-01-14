@@ -1,5 +1,5 @@
 let seleccionados = [];
-const app = document.getElementById('app'),
+let listaCart = document.querySelector("#listaCart"),
 btncomprar = document.getElementById('btncomprar');
 btnBuy = document.getElementById('btnBuy'),
 btnCalculo = document.getElementById('btnCalculo')
@@ -15,35 +15,32 @@ console.log(carrito);
 
 
 //Crear elemento
-function addCart(carrito) {
+for (const quimio of carrito) {
+  let html;
 
-    let html;
-    
-    html =
+  html =
     `<div class="">
     <div class = "card">
-    <h1>${carrito.nombre}</h1>
-          <div class ="card-title">
-              <p>${carrito.id}</p> 
-          </div>
+    <h1>${quimio.nombre}</h1>
+    <div class ="card-title">
+    <p>${quimio.id}</p> 
+    </div>
             <div class="card-content">
-              <span class ="card-title">${carrito.simbolo.toUpperCase()}</span>
-              <div>
-              <img src="../img/${carrito.img}" class="card-imge"/>
-              </div>
+            <span class ="card-title">${quimio.simbolo.toUpperCase()}</span>
+            <div>
+            <img src="../img/${quimio.img}" class="card-imge"/>
+            </div>
             </div>
             <div class="card-data">
             <p>electronegatividad</p>
-            <p>${carrito.electroNegatividad}</p>
+            <p>${quimio.electroNegatividad}</p>
             </div>
             <div>
             <form>
             <button id="add">Agregar al carrito</button>
-            <button id="btncomprar">Comprar</button>
+            <button id="comprar">Seprar</button>
             </form></div>
-      </div>
-  </div>`;
-  contenedor.innerHTML += html
-  
-  
+            </div>
+            </div>`;
+  listaCart.innerHTML += html
 }
