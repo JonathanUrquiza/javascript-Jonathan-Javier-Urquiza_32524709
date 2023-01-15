@@ -10,7 +10,8 @@ function inicioSecion(usuarios) {
     let userFound = usuarios.find(usuario =>{
         return usuario.nombre == user.value && usuario.pass == pass.value;
     });
-    userFound? window.location.href = "../pages/3°entrega.html" : window.alert("usuario no encontrado!!!");
+    userFound? window.location.href = "../pages/3°entrega.html" :Swal.fire('usuario no encontrado!!!');
+
 }
 function recuperaLS() {
     let datos = JSON.parse(localStorage.getItem("usuarios"));
