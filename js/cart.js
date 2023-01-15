@@ -5,7 +5,7 @@ btnBuy = document.getElementById('btnBuy'),
 btnCalculo = document.getElementById('btnCalculo')
 
 
-let carrito = JSON.parse(localStorage.getItem("separado"))
+const carrito = JSON.parse(localStorage.getItem("separado"))
 console.log(carrito);
 
 

@@ -331,11 +331,11 @@ function guardarEnstorage(encontrado) {
 //bucar elemento quimico
 btnBuscar.addEventListener('click', (e) => {
   e.preventDefault();
-  limpiarInner();
-  limpiarCampos();
   const encontrado = findQuimi(tablaPeriodica, input[0].value);
   guaradarElemento(encontrado);
   guardarEnstorage(tablaSecundaria);
+  limpiarInner();
+  limpiarCampos();
   crearElemento(encontrado);
 })
 //agregar elemento
