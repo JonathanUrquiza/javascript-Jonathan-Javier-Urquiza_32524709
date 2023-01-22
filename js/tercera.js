@@ -214,13 +214,13 @@ console.log(input);
 
 /////////////////////////FUNCIONES///////////////////////////////////////////////
 //Funcion constructora
-function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
+function Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad) {
   this.nombre = nombre;
   this.simbolo = simbolo;
-  this.id = id;
-  this.numeroM = numeroM;
+  this.id = parseInt(id);
+  this.numeroM = parseInt(numeroM);
   this.grupo = grupo;
-  this.img = img;
+  this.electroNegatividad = parseFloat(electroNegatividad);
 
 }
 
@@ -242,6 +242,8 @@ function limpiarCampos() {
   input[2].value = "";
   input[3].value = "";
   input[4].value = "";
+  input[5].value = "";
+  input[6].value = "";
 
 }
 //busqueda/filtrado por nombre
@@ -350,10 +352,10 @@ btnagregar.addEventListener('click', (e) => {
   let id = input[3].value;
   let numeroM = input[4].value;
   let grupo = input[5].value;
-  let img = input[6].value;
+  let electroNegatividad = input[6].value;
 
 
-  tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo, img));
+  tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
   crearHtml(tablaPeriodica);
 
 
