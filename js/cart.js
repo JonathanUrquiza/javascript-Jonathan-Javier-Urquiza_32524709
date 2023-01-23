@@ -22,7 +22,9 @@ console.log(...carrito);
 
 
  */
-
+function guardarStorage(elemento) {
+  return localStorage.setItem('separado', JSON.stringify(elemento))
+}
 
 
 //Crear elemento
@@ -103,6 +105,7 @@ for (const item of carrito) {
       local = carrito.filter((el) => el.simbolo != btnBorrar.id);;//va a traer todos los elementos excepto el elemeto que sea igual al id del boton
       console.log(local);
       //guardar en el local y pintar html
+      guardarStorage(local)
       crearHTML(local)
       //crearHtml(local);
     });
