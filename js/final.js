@@ -265,7 +265,7 @@ function crearHtml(array) {
     let html;
 
     for (const quimio of array) {
-        let html;
+        
 
         html =
             `<div class="">
