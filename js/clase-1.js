@@ -1,35 +1,67 @@
-/* variables, son espacioes en memorias que utilizamos para almacenar información
-// No se puede repetir las declaraciones de las variables
-var nombre = "jose";//ES5 no ultilizada a partir de ES6
-//encuentro un var y lo cambio por un let
+//Variable los nombres deben ser descriptivos 
 
-//ES6 let
+//error lens theme => ONE DARK PRO
 
-let nombres = "Jonathan Javier";
-let apellido = "Urquiza";
-let DNI = prompt("ingresa tu dni");
-console.log(DNI);
+//declaracion de variables
+var nombre; //ES5 no utilizada a partir de ES6
 
+//var nombre; encuentro un var lo cambio por let
 
-asigna un nvalor a un operador =
+//ES6 let 
+let apellido;
+let dni;
+let numero1;
+let numero2;
 
-Respeta la cascadad.
+//asignar un valor operador de asignacion =
+apellido = "Gutierrez";//cadena de caracteres o String
+dni = 654345678; //Number 
 
-let dni = 32524709; //variable de tipo number
-let dni2  = "tres, dos, cinco, dos cuatro, siete, cero, nueve";//variable del tipo string
+//reasignar valores
+dni= "uno, dos ,tres ,cuatro , cinco";//string
+apellido = 3.1416;//Número
 
+//constantes
+const PI =3.1416;
+//PI="Hola";NO SE PUEDE HACER PRUEBEN REASIGNAR EL VALOR A UNA CONSTANTE EN OTRA LINEA
 
-//constatnes, no se pueden reasignarun valor a las constantes, son fijas, se declaran y se inician al mismo tiempo.
-const pi = 3.141516;
-metodos de salida.
-console.log(nombres);
-console.log('hola mundo');
+//Operaciones basicas
 
+numero1= 2;
+numero2= 145;
+let resultado = numero1 + 12;//adición o suma
+let resta= 3.21 - 0.9;//Resta
+let multi= 120 * 44;//Multiplicación
+let division= 21 / 7;//División
 
-//metodos de entrada
-//prompt();
+//Concatenación Variables
+nombre= "Daniel";
+apellido = "Perez";
 
-let numero = prompt("ingresa un numero");
-console.log(numero);
-*/
+let nombre_completo= nombre + " " + apellido;
 
+//Métodos de salida console.log() ARMA SECRETA DEL PROGRAMADOR
+
+console.log("Hola");
+console.log(2 * 3);
+console.log(nombre_completo);
+console.log(resultado);
+console.log(resta);
+console.log("El nombre del alumno es " + nombre_completo);
+
+//Método de entrada
+
+let ingresoDato= prompt("Ingresa tu edad")
+
+console.log(ingresoDato);
+
+numero1= prompt("Ingresa un numero");//Siempre ingresa Strings
+numero2=parseFloat(prompt("Ingresa un numero"));
+
+//PARSEO o CONVERSION
+numero1= parseFloat(numero1);
+
+resultado = numero1 + numero2;
+
+console.log(resultado);
+console.log(12+"3");

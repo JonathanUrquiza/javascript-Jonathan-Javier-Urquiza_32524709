@@ -18,7 +18,7 @@ function dividir(numUno, numDos) {
     return numUno / numDos;
 }
 
-let operacion = parseInt(prompt("ingrese 1 para sumar, 2 para restar, 3 para multiplicar y 4 para dividir"));
+let operacion = parseInt(prompt("ingrese \n1 para calcular el volumen de la solución, \n2 para calcular el volumen del soluto, \n3 para calcular el volumen del solvente."));
 
 let resultado = 0;
 

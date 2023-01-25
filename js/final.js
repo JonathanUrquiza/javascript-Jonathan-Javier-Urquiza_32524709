@@ -32,7 +32,7 @@ fetch('../data/data.json')
     
             let html = "";
             //destructuring
-              const { nombre, id, simbolo, img, electroNegatividad } = item;
+              const { nombre, id, simbolo, img } = item;
               html =
                 `<div class="">
               <div class = "card">
