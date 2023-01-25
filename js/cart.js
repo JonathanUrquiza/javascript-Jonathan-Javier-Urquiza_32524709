@@ -11,6 +11,8 @@ btnBuy = document.getElementById('btnBuy'),
 const carrito = JSON.parse(localStorage.getItem("separado"))
 console.log(carrito);
 
+
+
 /* const [a, b, c, d] = carrito;
 console.log(a);
 console.log(carrito[0]);
@@ -28,7 +30,7 @@ function guardarStorage(elemento) {
 
 
 //Crear elemento
-function crearHTML(carrito) {
+ function crearHTML(carrito) {
   listaCart.innerHTML = "";
   for (const item of carrito) {
 
@@ -112,38 +114,3 @@ for (const item of carrito) {
   });
 
 
-  function crearHtml(arr) {
-    tbody.innerHTML = "";
-    let html = "";
-    for (const item of arr) {
-      //destructuring
-      const { titulo, autor, isbn, categoria, precio, img } = item;
-  
-      html = `<tr>
-    <td>${titulo}</td>
-    <td>${autor}</td>
-    <td>${isbn}</td>
-    <td>${categoria}</td>
-    <td>${precio}</td>
-    <td><img src="${img}"/></td>
-    <!-- boton borrar class="btn"-->
-    <td><button class="btn red" id="${isbn}">Borrar</button></td>
-    </tr>`;
-      tbody.innerHTML += html;
-    }
-    //Cargar evento al boton
-    //llamo a todos los botones con que esten dentro del td con clase btn
-    const arrayBotones = document.querySelectorAll("td .btn");
-    
-    //recorremos el NodeList de botones y le agregamos un evento
-    arrayBotones.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        //Decimos que la variable local va a ser igual al array filtrado
-        local = local.filter((el) => el.isbn != btn.id);//va a traer todos los elementos excepto el elemeto que sea igual al id del boton
-        console.log(local);
-        //guardar en el local y pintar html
-        guardarLS(local);
-        crearHtml(local);
-      });
-    });
-  }

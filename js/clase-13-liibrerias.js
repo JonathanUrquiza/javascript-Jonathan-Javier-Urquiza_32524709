@@ -2,8 +2,7 @@ document.title = "Clase 13 | Comisión 34125";
 const titulo = document.querySelector("h1 span"),
   tituloSecundario = document.querySelector("h2#secundario");
 
-titulo.innerText = "Clase 13";
-tituloSecundario.innerText = "Librerías";
+
 const btnSwal = document.getElementById("botonSwal"),
   btnToast = document.getElementById("botonToast"),
   horaActual = document.querySelector("#horaActual");
@@ -35,10 +34,10 @@ console.log(r); */
 //spread ... desparramar
 const numeros= [1,4,2,7,8,99,-12,132]
 const nombres=["Mariana", "Diego", "Julian","Maria" ]
-/* console.log(numeros);
+console.log(numeros);
 console.log(nombres);
-console.log(...nombres); */
-/* console.log(...numeros); */
+console.log(...numeros);
+console.log(...nombres);
 
 /* console.log(Math.max(...numeros));
 console.log(Math.min(...numeros)); */
@@ -46,7 +45,7 @@ console.log(Math.min(...numeros)); */
 const perros=["Firulais", "Copito", "Pototo"];
 const gatos=["Olivia", "Lila", "Michi"];
 const mascotas= [...perros, ...gatos]
-/* console.log(mascotas) */
+console.log(mascotas)
 /* const mascotas = perros.concat(gatos);
 console.log(mascotas); */
 
