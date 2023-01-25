@@ -14,11 +14,16 @@ console.log(input);
 fetch('../data/data.json')
 .then(res=>res.json())
 .then(datos=>{
-    btnver.addEventListener('click', (e) => {
-        e.preventDefault()
-        limpiarCampos();
-        crearHtml(datos);
-    })
+
+    function findQuimi(datos, filtro) {
+
+        const encontrado = datos.find((el) => {
+            return el.nombre.includes(filtro)
+        });
+        return encontrado;
+    }
+
+
     function crearHtml(array) {
 
         let html;
@@ -40,10 +45,6 @@ fetch('../data/data.json')
                       <div>
                       <img src="../img/${img}" class="card-imge"/>
                       </div>
-                      </div>
-                      <div class="card-data">
-                      <p>electronegatividad</p>
-                      <p>${electroNegatividad}</p>
                       </div>
                       <div>
                       <form>
@@ -74,19 +75,51 @@ fetch('../data/data.json')
     
     }
     
-    //crearHtml(datos)
-    //console.log(datos[0]);
+    btnagregar.addEventListener('click', (e) => {
+        limpiarInner();
+        e.preventDefault()
+    
+        let nombre = input[1].value;
+        let simbolo = input[2].value;
+        let id = input[3].value;
+        let numeroM = input[4].value;
+        let grupo = input[5].value;
+        let electroNegatividad = input[6].value;
+    
+    
+        tablaSecundaria.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
+        crearHtml(tablaSecundaria);
+    
+    
+    })
+
+    btnver.addEventListener('click', (e) => {
+        e.preventDefault()
+        limpiarCampos();
+        crearHtml(datos);
+    })
+
+    btnBuscar.addEventListener('click', (e) => {
+        e.preventDefault();
+        const encontrado = findQuimi(datos, input[0].value);
+        limpiarInner();
+        limpiarCampos();
+        crearElemento(encontrado);
+        console.log(encontrado);
+    })
+
+
 })
 
 /////////////////////////FUNCIONES///////////////////////////////////////////////
 //Funcion constructora
-function Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad, img) {
+function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
     this.nombre = nombre;
     this.simbolo = simbolo;
     this.id = parseInt(id);
     this.numeroM = parseInt(numeroM);
     this.grupo = grupo;
-    this.electroNegatividad = parseFloat(electroNegatividad);
+    
 
     img == "" ? (this.img = `https://via.placeholder.com/150`) : (this.img = img);
 
@@ -116,13 +149,13 @@ function limpiarCampos() {
 }
 
 //busqueda/filtrado por nombre
-function findQuimi(tablaPeriodica, filtro) {
+/* function findQuimi(datos, filtro) {
 
-    const encontrado = tablaPeriodica.find((el) => {
+    const encontrado = datos.find((el) => {
         return el.nombre.includes(filtro)
     });
     return encontrado;
-}
+} */
 //crar html para el array
 /* function crearHtml(array) {
 
@@ -197,10 +230,6 @@ function crearElemento(encontrado) {
             <img src="../img/${encontrado.img}" class="card-imge"/>
             </div>
             </div>
-            <div class="card-data">
-            <p>electronegatividad</p>
-            <p>${encontrado.electroNegatividad}</p>
-            </div>
             <div>
             <form>
             <button id="btnAdd">Agregar</button>
@@ -224,16 +253,16 @@ function guardarEnstorage(encontrado) {
 
 //////////////////////EVENTOS//////////////////////////
 //bucar elemento quimico
-btnBuscar.addEventListener('click', (e) => {
+/* btnBuscar.addEventListener('click', (e) => {
     e.preventDefault();
-    const encontrado = findQuimi(tablaPeriodica, input[0].value);
+    const encontrado = findQuimi(datos, input[0].value);
     limpiarInner();
     limpiarCampos();
     crearElemento(encontrado);
     console.log(encontrado);
-})
+}) */
 //agregar elemento
-btnagregar.addEventListener('click', (e) => {
+/* btnagregar.addEventListener('click', (e) => {
 
 
     limpiarInner();
@@ -247,17 +276,17 @@ btnagregar.addEventListener('click', (e) => {
     let electroNegatividad = input[6].value;
 
 
-    tablaPeriodica.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
-    crearHtml(tablaPeriodica);
+    tablaSecundaria.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
+    crearHtml(tablaSecundaria);
 
 
-})
+}) */
 //ver tabla existente
-/* btnver.addEventListener('click', (e) => {
+/*  btnver.addEventListener('click', (e) => {
     e.preventDefault()
     limpiarCampos();
     crearHtml(datos);
 })
- */
+  */
 
 

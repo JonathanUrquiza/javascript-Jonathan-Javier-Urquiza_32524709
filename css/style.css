@@ -22,12 +22,7 @@ ul {
   text-decoration: none;
 }
 
-li {
-  box-shadow: 2px 2px;
-  padding: 0 15px 0 15px;
-  border: 2px solid rgba(228, 57, 57, 0.792);
-  background-color: rgba(232, 187, 187, 0.798);
-}
+
 
 a {
   text-decoration: none;
@@ -93,6 +88,7 @@ main {
   border: 2px solid black;
   border-radius: 15px;
   padding: 5px;
+  box-shadow: 2px 2px;
 }
 
 .card-title {
@@ -122,12 +118,6 @@ samp {
   display:flex ;
   justify-content: space-evenly;
 }
-
-nav {
-  background-color: orangered;
-  margin-bottom: 5px;
-}
-
 .red {
   color: red;
   font-size: 3rem;
