@@ -11,11 +11,50 @@ const btnver = document.getElementById('btnver');
 let contenedor = document.querySelector("#contenedor");
 console.log(input);
 ////////////////////////////FETCH/////////////////////////////////
+/* 
+async function fetchApi() {
+    const response = await fetch('../data/data.json');
+    const datos = await response.json();
+    console.log(datos);
+    crearHtml(datos);
+    findQuimi(datos, filtro)
+}
+
+const tal = fetchApi()
+ */
+
+/* 
+const pedirarray = (respuesta)=>{
+    console.log(respuesta);
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            if (respuesta) {
+                resolve("va!")
+            } else {
+                reject("NOT FOUND!")
+            }
+        }, 5000);
+        
+        
+    })
+
+}
+console.log(pedirarray(fetchApi()));
+
+
+pedirarray(tal).then((response)=>{
+console.log(response);
+})
+
+pedirarray(tal).catch((error)=>{
+    console.log(error);
+})
+*/
 fetch('../data/data.json')
 .then(res=>res.json())
 .then(datos=>{
 
-    function findQuimi(datos, filtro) {
+     function findQuimi(datos, filtro) {
 
         const encontrado = datos.find((el) => {
             return el.nombre.includes(filtro)
@@ -25,9 +64,6 @@ fetch('../data/data.json')
 
 
     function crearHtml(array) {
-
-        let html;
-    
         for (const item of array) {
     
             let html = "";
@@ -96,7 +132,9 @@ fetch('../data/data.json')
     btnver.addEventListener('click', (e) => {
         e.preventDefault()
         limpiarCampos();
-        crearHtml(datos);
+        setTimeout(() => {
+            crearHtml(datos)
+        }, 3000);
     })
 
     btnBuscar.addEventListener('click', (e) => {
@@ -104,13 +142,12 @@ fetch('../data/data.json')
         const encontrado = findQuimi(datos, input[0].value);
         limpiarInner();
         limpiarCampos();
-        crearElemento(encontrado);
+        setTimeout(() => {
+            crearElemento(encontrado);
+        }, 3000);
         console.log(encontrado);
     })
-
-
 })
-
 /////////////////////////FUNCIONES///////////////////////////////////////////////
 //Funcion constructora
 function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
@@ -119,7 +156,7 @@ function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
     this.id = parseInt(id);
     this.numeroM = parseInt(numeroM);
     this.grupo = grupo;
-    
+
 
     img == "" ? (this.img = `https://via.placeholder.com/150`) : (this.img = img);
 
@@ -149,24 +186,21 @@ function limpiarCampos() {
 }
 
 //busqueda/filtrado por nombre
-/* function findQuimi(datos, filtro) {
+/* function findQuimi(arr, filtro) {
 
-    const encontrado = datos.find((el) => {
+    const encontrado = tablaPeriodica.find((el) => {
         return el.nombre.includes(filtro)
     });
     return encontrado;
 } */
 //crar html para el array
-/* function crearHtml(array) {
-
-    let html;
-
-    for (const item of array) {
+/* function crearHtml(datos) {
+    for (const item of datos) {
 
         let html = "";
         //destructuring
-          const { nombre, id, simbolo, img, electroNegatividad } = item;
-          html =
+        const { nombre, id, simbolo, img, electroNegatividad } = item;
+        html =
             `<div class="">
           <div class = "card">
           <h1>${nombre}</h1>
@@ -190,21 +224,21 @@ function limpiarCampos() {
                   </div>
                   </div>
                   </div>`;
-          contenedor.innerHTML += html;
-        }
+        contenedor.innerHTML += html;
+    }
     const arrayBotones = document.querySelectorAll(".btnAdd");
     console.log(arrayBotones);
 
     arrayBotones.forEach((btnAdd) => {
-        btnAdd.addEventListener('click', (e)=>{
+        btnAdd.addEventListener('click', (e) => {
             e.preventDefault();
             let add = tablaPeriodica.find((el) => el.simbolo == btnAdd.id);
             console.log(add);
             guaradarElemento(add);
             console.log(tablaSecundaria);
             guardarStorage(tablaSecundaria);
-            
-            
+
+
             //guaradarElemento(local);//quizas entre llaves y puntos, desparramando
             //concatenar arrays
         })
@@ -213,21 +247,21 @@ function limpiarCampos() {
 }
  */
 //Crear elemento
-function crearElemento(encontrado) {
+/* function crearElemento(encontrado) {
 
     let html;
-
+    const { nombre, id, simbolo, img } = encontrado;
     html =
         `<div class="">
   <div class = "card">
-  <h1>${encontrado.nombre}</h1>
+  <h1>${nombre}</h1>
   <div class ="card-title">
-              <p>${encontrado.id}</p> 
+              <p>${id}</p> 
               </div>
             <div class="card-content">
-            <span class ="card-title">${encontrado.simbolo.toUpperCase()}</span>
+            <span class ="card-title">${simbolo.toUpperCase()}</span>
             <div>
-            <img src="../img/${encontrado.img}" class="card-imge"/>
+            <img src="../img/${img}" class="card-imge"/>
             </div>
             </div>
             <div>
@@ -242,10 +276,10 @@ function crearElemento(encontrado) {
         e.preventDefault()
         guaradarElemento(encontrado);
         guardarStorage(tablaSecundaria);
-    
+
     })
 }
-
+ */
 
 function guardarEnstorage(encontrado) {
     return localStorage.setItem('separado', JSON.stringify(encontrado))
@@ -253,16 +287,20 @@ function guardarEnstorage(encontrado) {
 
 //////////////////////EVENTOS//////////////////////////
 //bucar elemento quimico
-/* btnBuscar.addEventListener('click', (e) => {
+/* 
+btnBuscar.addEventListener('click', (e) => {
     e.preventDefault();
-    const encontrado = findQuimi(datos, input[0].value);
+    const encontrado = findQuimi(tablaPeriodica, input[0].value);
     limpiarInner();
     limpiarCampos();
-    crearElemento(encontrado);
+    setTimeout(() => {
+        crearElemento(encontrado);
+    }, 3000);
     console.log(encontrado);
-}) */
+    
+})
 //agregar elemento
-/* btnagregar.addEventListener('click', (e) => {
+btnagregar.addEventListener('click', (e) => {
 
 
     limpiarInner();
@@ -280,13 +318,17 @@ function guardarEnstorage(encontrado) {
     crearHtml(tablaSecundaria);
 
 
-}) */
+})
 //ver tabla existente
-/*  btnver.addEventListener('click', (e) => {
+btnver.addEventListener('click', (e) => {
     e.preventDefault()
     limpiarCampos();
-    crearHtml(datos);
+    const data = fetchApi()
+    console.log(data);
+    setTimeout(() => {
+        crearHtml(data)
+    }, 3000);
 })
-  */
 
+ */
 

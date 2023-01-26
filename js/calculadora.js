@@ -1,7 +1,7 @@
 document.title = "Calculadora de sustancias!!!";
 
 const card = document.getElementById('card'),
-info = document.getElementById('info');
+    info = document.getElementById('info');
 
 let nombre = document.createElement('h1');
 let simbolo = document.createComment('h2');
@@ -12,7 +12,7 @@ let grupo = document.createElement('p');
 const sustancias = JSON.parse(localStorage.getItem("separado"))
 console.log(sustancias);
 console.log(info);
-console.log(card);
+console.log(card.innerHTML);
 
 
 /////////////funciones/////////////
@@ -20,8 +20,8 @@ for (const item of sustancias) {
 
     let html = "";
     //destructuring
-      const { nombre, id, simbolo, img} = item;
-      html =
+    const { nombre, id, simbolo, img } = item;
+    html =
         `<div class="">
       <div class = "card">
       <h1>${nombre}</h1>
@@ -42,33 +42,60 @@ for (const item of sustancias) {
               </div>
               </div>
               </div>`;
-      card.innerHTML += html;
-    }
-    const arrayBotones = document.querySelectorAll(".btnBorrar");
-    const arrSend = document.querySelectorAll(".btnSend");
-    console.log(arrayBotones);
-    console.log(arrSend);
-    //recorremos el NodeList de botones y le agregamos un evento
-    arrayBotones.forEach((btnBorrar) => {
-      btnBorrar.addEventListener("click", (e) => {
+    card.innerHTML += html;
+}
+const arrayBotones = document.querySelectorAll(".btnBorrar");
+const arrSend = document.querySelectorAll(".btnSend");
+console.log(arrayBotones);
+console.log(arrSend);
+//recorremos el NodeList de botones y le agregamos un evento
+arrayBotones.forEach((btnBorrar) => {
+    btnBorrar.addEventListener("click", (e) => {
         e.preventDefault()
         console.log("funciona");
         //Decimos que la variable local va a ser igual al array filtrado
         local = sustancias.filter((el) => el.simbolo != btnBorrar.id);;//va a traer todos los elementos excepto el elemeto que sea igual al id del boton
-      });
     });
+});
 
-    arrSend.forEach((btnsend)=>{
-        btnsend.addEventListener("click",(e)=>{
-            e.preventDefault()
-            console.log("funciona");
-            let datoSustancia = sustancias.find((el) => el.simbolo == btnsend.id);
-            console.log(datoSustancia);
-        })
+arrSend.forEach((btnsend) => {
+    btnsend.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("funciona");
+        let datoSustancia = sustancias.find((el) => el.simbolo == btnsend.id);
+        console.log(datoSustancia);
+        crearElemento(datoSustancia)
     })
-    
+})
 
 
+function crearElemento(datoSustancia) {
+
+    let html;
+    const { nombre, id, simbolo, numeroM, grupo } = datoSustancia;
+    html =
+    `<div class="card">
+      <div>
+        <h1>${nombre}</h1>
+      </div>
+      <div>
+        <h2>${id}</h2> 
+      </div>
+        <div>
+        <span class ="card-title">${simbolo.toUpperCase()}</span>
+        <p>grupo:</p>
+                <p>${grupo}</p>
+                <div>
+                <p>numero Masico</p>
+                <p>${numeroM}</p>
+                </div>
+                </div>
+                <div>
+               
+                </div>
+                </div>`;
+    info.innerHTML += html
+}
 
 /* function sumar(numUno, numDos) {
     return numUno + numDos;
