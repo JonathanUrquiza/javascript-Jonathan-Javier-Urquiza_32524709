@@ -8,7 +8,7 @@ let simbolo = document.createComment('h2');
 let Atomico = document.createElement('h2');
 let masico = document.createElement('p');
 let grupo = document.createElement('p');
-
+const matematica =[];
 const sustancias = JSON.parse(localStorage.getItem("separado"))
 console.log(sustancias);
 console.log(info);
@@ -37,7 +37,7 @@ for (const item of sustancias) {
               <div>
               <form>
               <button class="btnBorrar" id="${simbolo}">Borrar</button>
-              <button class="btnSend"   id="${simbolo}">Datos</button>
+              <button class="btnDatos"   id="${simbolo}">Calcular</button>
               </form>
               </div>
               </div>
@@ -45,9 +45,9 @@ for (const item of sustancias) {
     card.innerHTML += html;
 }
 const arrayBotones = document.querySelectorAll(".btnBorrar");
-const arrSend = document.querySelectorAll(".btnSend");
+const arrDatos = document.querySelectorAll(".btnDatos");
 console.log(arrayBotones);
-console.log(arrSend);
+console.log(arrDatos);
 //recorremos el NodeList de botones y le agregamos un evento
 arrayBotones.forEach((btnBorrar) => {
     btnBorrar.addEventListener("click", (e) => {
@@ -58,13 +58,17 @@ arrayBotones.forEach((btnBorrar) => {
     });
 });
 
-arrSend.forEach((btnsend) => {
-    btnsend.addEventListener("click", (e) => {
+arrDatos.forEach((btndatos) => {
+    btndatos.addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("funciona");
-        let datoSustancia = sustancias.find((el) => el.simbolo == btnsend.id);
-        console.log(datoSustancia);
-        crearElemento(datoSustancia)
+        let datoSustancia = sustancias.find((el) => el.simbolo == btndatos.id);
+         matematica.push(datoSustancia.numeroM)
+         console.log(matematica);
+         numeroUno = matematica[0];
+         numeroDos = matematica[1];
+         numeroTres = matematica[2];
+         sumar(numeroUno,numeroDos,numeroTres);
+         console.log(sumar(numeroUno,numeroDos,numeroTres));
     })
 })
 
@@ -97,9 +101,10 @@ function crearElemento(datoSustancia) {
     info.innerHTML += html
 }
 
-/* function sumar(numUno, numDos) {
+function sumar(numUno, numDos) {
     return numUno + numDos;
 }
+/* 
 
 function restar(numUno, numDos) {
     return numUno - numDos;

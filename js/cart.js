@@ -104,7 +104,7 @@ for (const item of carrito) {
       e.preventDefault()
       console.log("funciona");
       //Decimos que la variable local va a ser igual al array filtrado
-      local = sustancias.filter((el) => el.simbolo != btnBorrar.id);;//va a traer todos los elementos excepto el elemeto que sea igual al id del boton
+      local = carrito.filter((el) => el.simbolo != btnBorrar.id);;//va a traer todos los elementos excepto el elemeto que sea igual al id del boton
       console.log(local);
       //guardar en el local y pintar html
       guardarStorage(local)
