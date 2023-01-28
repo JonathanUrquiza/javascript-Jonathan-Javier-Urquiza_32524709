@@ -64,11 +64,15 @@ arrDatos.forEach((btndatos) => {
         let datoSustancia = sustancias.find((el) => el.simbolo == btndatos.id);
          matematica.push(datoSustancia.numeroM)
          console.log(matematica);
+        /*matematica.forEach((numero) => {
+
+        }*/
+
          numeroUno = matematica[0];
          numeroDos = matematica[1];
          numeroTres = matematica[2];
-         sumar(numeroUno,numeroDos,numeroTres);
-         console.log(sumar(numeroUno,numeroDos,numeroTres));
+          resultado = sumar(numeroUno,numeroDos,numeroTres);
+         console.log(resultado);
     })
 })
 
