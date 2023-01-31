@@ -114,3 +114,6 @@ for (const item of carrito) {
   });
 
 
+  console.log(nume.concat(numeros));
+  console.log(nume.concat(numeros[0].numero));
+  console.log(nume[0].concat(numeros[0].numero));

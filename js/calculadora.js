@@ -37,7 +37,7 @@ for (const item of sustancias) {
               <div>
               <form>
               <button class="btnBorrar" id="${simbolo}">Borrar</button>
-              <button class="btnDatos"   id="${simbolo}">Calcular</button>
+              <button class="btnDatos"   id="${simbolo}">Sumar</button>
               </form>
               </div>
               </div>
@@ -63,16 +63,8 @@ arrDatos.forEach((btndatos) => {
         e.preventDefault()
         let datoSustancia = sustancias.find((el) => el.simbolo == btndatos.id);
          matematica.push(datoSustancia.numeroM)
-         console.log(matematica);
-        /*matematica.forEach((numero) => {
-
-        }*/
-
-         numeroUno = matematica[0];
-         numeroDos = matematica[1];
-         numeroTres = matematica[2];
-          resultado = sumar(numeroUno,numeroDos,numeroTres);
-         console.log(resultado);
+        resultado = sumar(...matematica);
+        console.log(resultado);
     })
 })
 
@@ -105,8 +97,10 @@ function crearElemento(datoSustancia) {
     info.innerHTML += html
 }
 
-function sumar(numUno, numDos) {
-    return numUno + numDos;
+function sumar(...param) {
+    return param.reduce((acc,el) =>{
+        return acc + el
+    },0)
 }
 /* 
 

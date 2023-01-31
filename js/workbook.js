@@ -1,3 +1,12 @@
+const numeros = [{numero: 1}, {numero: 2},{numero:3},{numero:4},];
+const nume = [1,2,3,4,5,];
+
+
+console.log(nume[0]);
+console.log(numeros[0].numero + numeros[1].numero + numeros[2].numero);
+console.log(nume.concat(numeros));
+console.log(nume.concat(numeros[0].numero));
+
 //workbook: ejercicio 1 if {} else {}
 
 //Ingreso de información
