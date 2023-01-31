@@ -2,12 +2,6 @@ document.title = "Calculadora de sustancias!!!";
 
 const card = document.getElementById('card'),
     info = document.getElementById('info');
-
-let nombre = document.createElement('h1');
-let simbolo = document.createComment('h2');
-let Atomico = document.createElement('h2');
-let masico = document.createElement('p');
-let grupo = document.createElement('p');
 const matematica =[];
 const sustancias = JSON.parse(localStorage.getItem("separado"))
 console.log(sustancias);
@@ -36,18 +30,24 @@ for (const item of sustancias) {
               </div>
               <div>
               <form>
-              <button class="btnBorrar" id="${simbolo}">Borrar</button>
+              <button class="btnRestar"   id="${simbolo}">Restar</button>
               <button class="btnDatos"   id="${simbolo}">Sumar</button>
+              <button class="btnBorrar" id="${simbolo}">Borrar</button>
               </form>
               </div>
               </div>
               </div>`;
     card.innerHTML += html;
 }
+const arrayRestar = document.querySelectorAll(".btnRestar");
 const arrayBotones = document.querySelectorAll(".btnBorrar");
 const arrDatos = document.querySelectorAll(".btnDatos");
+const btnRest = document.getElementById("btnRest");
+console.log(btnRest);
+
 console.log(arrayBotones);
 console.log(arrDatos);
+console.log(arrayRestar);
 //recorremos el NodeList de botones y le agregamos un evento
 arrayBotones.forEach((btnBorrar) => {
     btnBorrar.addEventListener("click", (e) => {
@@ -62,9 +62,23 @@ arrDatos.forEach((btndatos) => {
     btndatos.addEventListener("click", (e) => {
         e.preventDefault()
         let datoSustancia = sustancias.find((el) => el.simbolo == btndatos.id);
-         matematica.push(datoSustancia.numeroM)
+        guardarElem(datoSustancia)
         resultado = sumar(...matematica);
         console.log(resultado);
+        info.innerHTML = `<h1>${resultado}</h1>`
+    })
+})
+
+arrayRestar.forEach((btnRestar) => {
+    btnRestar.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("falta programar la lógica de restar!!!");
+        /*   
+        let datoSustancia = sustancias.find((el) => el.simbolo == btndatos.id);
+         matematica.push(datoSustancia.numeroM) 
+         resultadoResta = restar();
+         console.log(resultadoResta);
+         */
     })
 })
 
@@ -102,12 +116,18 @@ function sumar(...param) {
         return acc + el
     },0)
 }
-/* 
 
-function restar(numUno, numDos) {
-    return numUno - numDos;
+function restar(...param) {
+    return param.reduce((acc, el) =>{
+        return el - acc
+    },0)
 }
 
+function guardarElem(datoSustancia) {
+    return  matematica.push(datoSustancia.numeroM)
+}
+
+/* 
 function multiplicacion(numUno, numDos) {
     return numUno * numDos;
 }

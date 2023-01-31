@@ -10,20 +10,6 @@ btnBuy = document.getElementById('btnBuy'),
 
 const carrito = JSON.parse(localStorage.getItem("separado"))
 console.log(carrito);
-
-
-
-/* const [a, b, c, d] = carrito;
-console.log(a);
-console.log(carrito[0]);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(...carrito);
-//console.log(Math.max(...carrito));
-
-
- */
 function guardarStorage(elemento) {
   return localStorage.setItem('separado', JSON.stringify(elemento))
 }
@@ -112,8 +98,3 @@ for (const item of carrito) {
       //crearHtml(local);
     });
   });
-
-
-  console.log(nume.concat(numeros));
-  console.log(nume.concat(numeros[0].numero));
-  console.log(nume[0].concat(numeros[0].numero));

@@ -7,32 +7,18 @@
   box-sizing: border-box;
   list-style: none;
 }
-
-header {
-  color: bisque;
-  background-image: url(../img/fondo/locura.jpg);
-  background-position: center;
-  background-size: 125% 125%;
-  background-repeat: no-repeat;
-
-}
 ul {
   color: none;
   list-style: none;
   text-decoration: none;
 }
-
-
-
 a {
   text-decoration: none;
   color: black;
 }
-
 i {
   color: white;
 }
-
 button {
   color: aqua;
   border: 2px;
@@ -120,7 +106,7 @@ samp {
 }
 .red {
   color: red;
-  font-size: 3rem;
+  background-color: rgba(255, 228, 196, 0.609);
 }
 
 /*# sourceMappingURL=style.css.map */
