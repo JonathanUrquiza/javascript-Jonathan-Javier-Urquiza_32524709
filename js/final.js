@@ -70,7 +70,7 @@ fetch('../data/data.json')
             //destructuring
               const { nombre, id, simbolo, img } = item;
               html =
-                `<div class="">
+                `
               <div class = "card">
               <h1>${nombre}</h1>
               <div class ="card-title">
@@ -88,7 +88,7 @@ fetch('../data/data.json')
                       </form>
                       </div>
                       </div>
-                      </div>`;
+                      `;
               contenedor.innerHTML += html;
             }
         const arrayBotones = document.querySelectorAll(".btnAdd");
