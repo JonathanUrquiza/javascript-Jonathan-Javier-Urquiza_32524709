@@ -51,26 +51,26 @@ pedirarray(tal).catch((error)=>{
 })
 */
 fetch('../data/data.json')
-.then(res=>res.json())
-.then(datos=>{
+    .then(res => res.json())
+    .then(datos => {
 
-     function findQuimi(datos, filtro) {
+        function findQuimi(datos, filtro) {
 
-        const encontrado = datos.find((el) => {
-            return el.nombre.includes(filtro)
-        });
-        return encontrado;
-    }
+            const encontrado = datos.find((el) => {
+                return el.nombre.includes(filtro)
+            });
+            return encontrado;
+        }
 
 
-    function crearHtml(array) {
-        for (const item of array) {
-    
-            let html = "";
-            //destructuring
-              const { nombre, id, simbolo, img } = item;
-              html =
-                `
+        function crearHtml(array) {
+            for (const item of array) {
+
+                let html = "";
+                //destructuring
+                const { nombre, id, simbolo, img } = item;
+                html =
+                    `
               <div class = "card">
               <h1>${nombre}</h1>
               <div class ="card-title">
@@ -89,66 +89,88 @@ fetch('../data/data.json')
                       </div>
                       </div>
                       `;
-              contenedor.innerHTML += html;
+                contenedor.innerHTML += html;
             }
-        const arrayBotones = document.querySelectorAll(".btnAdd");
-        console.log(arrayBotones);
-    
-        arrayBotones.forEach((btnAdd) => {
-            btnAdd.addEventListener('click', (e)=>{
-                e.preventDefault();
-                let add = datos.find((el) => el.simbolo == btnAdd.id);
-                console.log(add);
-                guaradarElemento(add);
-                console.log(tablaSecundaria);
-                guardarStorage(tablaSecundaria);
-                
-                
-                //guaradarElemento(local);//quizas entre llaves y puntos, desparramando
-                //concatenar arrays
+            const arrayBotones = document.querySelectorAll(".btnAdd");
+            console.log(arrayBotones);
+
+            arrayBotones.forEach((btnAdd) => {
+                btnAdd.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let add = datos.find((el) => el.simbolo == btnAdd.id);
+                    console.log(add);
+                    guaradarElemento(add);
+                    console.log(tablaSecundaria);
+                    guardarStorage(tablaSecundaria);
+                    Toastify({
+                        text: "Elemento agregado!!",
+                        duration: 3000,
+                        close: true,
+                        gravity: top,
+                        position: "rigth",
+                        stopOnFocus: true,
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                        onclick: function () {
+                            console.log("funciona");
+                        }
+                    }).showToast();
+
+
+                    //guaradarElemento(local);//quizas entre llaves y puntos, desparramando
+                    //concatenar arrays
+                })
             })
+
+        }
+
+        btnagregar.addEventListener('click', (e) => {
+            limpiarInner();
+            e.preventDefault()
+
+            let nombre = input[1].value;
+            let simbolo = input[2].value;
+            let id = input[3].value;
+            let numeroM = input[4].value;
+            let grupo = input[5].value;
+            let electroNegatividad = input[6].value;
+
+
+            tablaSecundaria.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
+            crearHtml(tablaSecundaria);
+
+
         })
-    
-    }
-    
-    btnagregar.addEventListener('click', (e) => {
-        limpiarInner();
-        e.preventDefault()
-    
-        let nombre = input[1].value;
-        let simbolo = input[2].value;
-        let id = input[3].value;
-        let numeroM = input[4].value;
-        let grupo = input[5].value;
-        let electroNegatividad = input[6].value;
-    
-    
-        tablaSecundaria.push(new Quimico(nombre, simbolo, id, numeroM, grupo, electroNegatividad));
-        crearHtml(tablaSecundaria);
-    
-    
-    })
 
-    btnver.addEventListener('click', (e) => {
-        e.preventDefault()
-        limpiarCampos();
-        setTimeout(() => {
-            crearHtml(datos)
-        }, 3000);
-    })
+        btnver.addEventListener('click', (e) => {
+            e.preventDefault()
+            limpiarCampos();
+            setTimeout(() => {
+                crearHtml(datos)
+            }, 2000);
+        })
+        btnver.addEventListener('click', ()=>{
+           
+        })
 
-    btnBuscar.addEventListener('click', (e) => {
-        e.preventDefault();
-        const encontrado = findQuimi(datos, input[0].value);
-        limpiarInner();
-        limpiarCampos();
-        setTimeout(() => {
-            crearElemento(encontrado);
-        }, 3000);
-        console.log(encontrado);
+        btnBuscar.addEventListener('click', (e) => {
+            e.preventDefault();
+            const encontrado = findQuimi(datos, input[0].value);
+            limpiarInner();
+            limpiarCampos();
+            setTimeout(() => {
+                crearElemento(encontrado);
+            }, 2000);
+            console.log(encontrado);
+        })
     })
-})
 /////////////////////////FUNCIONES///////////////////////////////////////////////
+
+
+
+
+
 //Funcion constructora
 function Quimico(nombre, simbolo, id, numeroM, grupo, img) {
     this.nombre = nombre;
