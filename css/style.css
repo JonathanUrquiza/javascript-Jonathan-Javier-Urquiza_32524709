@@ -70,7 +70,7 @@ main {
 .card {
   margin: 3px;
   width: 250px;
-  height: auto;
+  height: max-content;
   border: 2px solid black;
   border-radius: 15px;
   padding: 5px;
@@ -98,8 +98,7 @@ img {
   padding: 5px;
   border-radius: 25px;
 }
-samp {
-}
+
 .card-data {
   display:flex ;
   justify-content: space-evenly;

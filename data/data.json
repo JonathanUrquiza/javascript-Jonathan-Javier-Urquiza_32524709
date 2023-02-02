@@ -211,7 +211,8 @@
       "nombre":"Níquel",
       "simbolo":"Ni",
       "id":28,
-      "numeroM":58.69
+      "numeroM":58.69,
+      "img":"niquel.jpg"
    },
    {
       "nombre":"Cobre",
